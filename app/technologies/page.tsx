@@ -12,7 +12,7 @@ export default function TechnologiesPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-background p-10 md:p-20 md:py-32">
+      <section className="relative overflow-hidden bg-background container mx-auto p-10 md:p-20 md:py-32">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -39,8 +39,8 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Services Section */}
-      <section className="p-10 md:p bg-muted/50">
-        <div className="container justify-center">
+      <section className=" p-10 md:p bg-muted/50">
+        <div className="container mx-auto justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export default function TechnologiesPage() {
 
       {/* Courses Section */}
       <section className="p-20">
-        <div className="container">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

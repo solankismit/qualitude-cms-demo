@@ -47,14 +47,53 @@ export const courses: Course[] = [
     ],
     careers: [
       {
-        title: "Frontend Developer",
-        description: "Build user interfaces for web applications",
+      title: "Frontend Developer",
+      description: "Build user interfaces for web applications",
       },
       {
-        title: "Full Stack Developer",
-        description: "Develop both client and server-side applications",
+      title: "Full Stack Developer",
+      description: "Develop both client and server-side applications",
       },
     ],
-  },
-  // Add more courses...
+    },
+    {
+    id: "mobile-development",
+    title: "Mobile App Development Internship",
+    description: "Master mobile app development with React Native and Flutter",
+    duration: "12 weeks",
+    schedule: "Monday to Friday, 4 hours per day",
+    skills: [
+      "React Native",
+      "Flutter",
+      "TypeScript",
+      "Dart",
+      "REST APIs",
+      "Firebase",
+      "Mobile UI/UX Design",
+    ],
+    curriculum: [
+      {
+      week: 1,
+      title: "Mobile Development Fundamentals",
+      topics: ["React Native Basics", "Flutter Basics", "JavaScript ES6+", "Dart Basics"],
+      },
+      {
+      week: 2,
+      title: "React Native Advanced",
+      topics: ["Components", "State Management", "Navigation", "APIs"],
+      },
+      // Add more weeks...
+    ],
+    careers: [
+      {
+      title: "Mobile App Developer",
+      description: "Develop mobile applications for iOS and Android",
+      },
+      {
+      title: "Cross-Platform Developer",
+      description: "Build applications that run on multiple platforms",
+      },
+    ],
+    },
+    // Add more courses...
 ];

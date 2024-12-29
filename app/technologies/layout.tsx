@@ -1,4 +1,4 @@
-import './globals.css';
+// import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -18,20 +18,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const pathname = usePathname();
-  const isHomePage = true;
-
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+    // <html lang="en" suppressHydrationWarning>
+    //   <body className={inter.className}>
+    //     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <>
           <div className="flex min-h-screen flex-col">
-            {!isHomePage && <Navbar />}
+            <Navbar />
             <main className="flex-1">{children}</main>
-            {!isHomePage && <Footer />}
+             <Footer />
           </div>
-        </ThemeProvider>
-      </body>
-    </html>
+          </>
+    //     </ThemeProvider>
+    //   </body>
+    // </html>
   );
 }

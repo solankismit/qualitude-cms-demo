@@ -9,7 +9,7 @@ interface CourseHeroProps {
 
 export function CourseHero({ title, description }: CourseHeroProps) {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32">
+    <section className="relative container mx-auto overflow-hidden py-20 md:py-32">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

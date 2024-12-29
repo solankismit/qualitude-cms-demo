@@ -1,69 +1,52 @@
-"use client";
+import Link from 'next/link'
+import Image from 'next/image'
+import { SunIcon, CircuitBoardIcon } from 'lucide-react'
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Zap, Cpu, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className="min-h-screen grid md:grid-cols-2">
-      {/* Qualitude Technologies Card */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative group h-full"
+    <main className="h-screen w-full flex flex-col md:flex-row">
+      <Link 
+        href="/solar" 
+        className="relative h-1/2 md:h-full md:w-1/2 group overflow-hidden"
       >
-        <Link href="/technologies" className="block h-full">
-          <div className="relative h-full p-12 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 hover:shadow-2xl transition-all duration-500">
-            <div className="relative z-10 flex flex-col h-full justify-center">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <Cpu className="h-10 w-10" />
-              </div>
-              <h2 className="mb-4 text-4xl font-bold">
-                Qualitude Technologies
-              </h2>
-              <p className="mb-8 text-xl text-muted-foreground max-w-lg">
-                Cutting-edge solutions in app development, web development,
-                and AI, coupled with comprehensive tech education programs.
-              </p>
-              <Button size="lg" className="w-fit group-hover:translate-x-2 transition-transform">
-                Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </Link>
-      </motion.div>
+        <Image
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1920&auto=format&fit=crop"
+          alt="Solar panels field under blue sky"
+          fill
+          className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+          priority
+        />
+        <div className="absolute inset-0 bg-blue-900/75 transition-all duration-700 ease-in-out group-hover:bg-blue-900/60" />
+        <div className="relative h-full flex flex-col items-center justify-center text-white p-6 text-center transition-transform duration-700 ease-in-out group-hover:scale-105">
+          <SunIcon className="w-16 h-16 mb-4 text-yellow-400 transition-transform duration-700 ease-in-out" />
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 transition-colors duration-700 ease-in-out group-hover:text-yellow-300">Qualitude Solar</h1>
+          <p className="text-lg md:text-xl max-w-md transition-opacity duration-700 ease-in-out opacity-80 group-hover:opacity-100">
+            Powering a sustainable future through innovative solar solutions
+          </p>
+        </div>
+      </Link>
 
-      {/* Qualitude Solar Card */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative group h-full"
+      <Link 
+        href="/technologies" 
+        className="relative h-1/2 md:h-full md:w-1/2 group overflow-hidden"
       >
-        <Link href="/solar" className="block h-full">
-          <div className="relative h-full p-12 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950 dark:to-yellow-900 hover:shadow-2xl transition-all duration-500">
-            <div className="relative z-10 flex flex-col h-full justify-center">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <Zap className="h-10 w-10" />
-              </div>
-              <h2 className="mb-4 text-4xl font-bold">
-                Qualitude Solar
-              </h2>
-              <p className="mb-8 text-xl text-muted-foreground max-w-lg">
-                Sustainable energy solutions for a greener future. Coming
-                soon with innovative solar technology offerings.
-              </p>
-              <Button size="lg" variant="secondary" className="w-fit group-hover:translate-x-2 transition-transform">
-                Coming Soon <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </Link>
-      </motion.div>
-    </div>
-  );
+        <Image
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop"
+          alt="Circuit board close up"
+          fill
+          className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+          priority
+        />
+        <div className="absolute inset-0 bg-blue-900/75 transition-all duration-700 ease-in-out group-hover:bg-blue-900/60" />
+        <div className="relative h-full flex flex-col items-center justify-center text-white p-6 text-center transition-transform duration-700 ease-in-out group-hover:scale-105">
+          <CircuitBoardIcon className="w-16 h-16 mb-4 text-cyan-400 transition-transform duration-700 ease-in-out " />
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 transition-colors duration-700 ease-in-out group-hover:text-cyan-300">Qualitude Technologies</h1>
+          <p className="text-lg md:text-xl max-w-md transition-opacity duration-700 ease-in-out opacity-80 group-hover:opacity-100">
+            Driving digital transformation through cutting-edge technology
+          </p>
+        </div>
+      </Link>
+    </main>
+  )
 }
+
