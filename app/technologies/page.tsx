@@ -39,7 +39,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Services Section */}
-      <section className=" p-10 md:p bg-muted/50">
+      <section className=" p-10 md:p-20 bg-muted/50">
         <div className="container mx-auto justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Courses Section */}
-      <section className="p-20">
+      <section className="p-10 md:p-20">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

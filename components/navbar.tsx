@@ -75,13 +75,13 @@ export function Navbar() {
             >
               Solar
             </Link>
-            <Link
+            {/* <Link
               href="/courses"
               className="text-foreground/60 transition-colors hover:text-foreground"
               onClick={() => setIsOpen(false)}
             >
               Courses
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

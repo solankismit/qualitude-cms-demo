@@ -16,23 +16,23 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Services</h3>
+            <h3 className="mb-4 text-sm font-semibold">Courses</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/technologies/app-development" className="text-muted-foreground hover:text-foreground">
+                <Link href="/technologies/courses/app-development" className="text-muted-foreground hover:text-foreground">
                   App Development
                 </Link>
               </li>
               <li>
-                <Link href="/technologies/web-development" className="text-muted-foreground hover:text-foreground">
+                <Link href="/technologies/courses/web-development" className="text-muted-foreground hover:text-foreground">
                   Web Development
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/technologies/ai" className="text-muted-foreground hover:text-foreground">
                   AI Solutions
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div>
