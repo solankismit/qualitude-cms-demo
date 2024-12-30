@@ -36,7 +36,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            {/* <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground">
@@ -48,14 +48,10 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-foreground">
-                  Careers
-                </Link>
-              </li>
+              
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="mb-4 text-sm font-semibold">Legal</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -68,9 +64,10 @@ export function Footer() {
                   Terms of Service
                 </Link>
               </li>
-            </ul>*/}
+            </ul>
           </div> 
-        </div>
+        */}
+        </div> 
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} Qualitude. All rights reserved.
         </div>
