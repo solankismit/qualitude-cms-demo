@@ -19,7 +19,7 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold">Courses</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/technologies/courses/app-development" className="text-muted-foreground hover:text-foreground">
+                <Link href="/technologies/courses/mobile-development" className="text-muted-foreground hover:text-foreground">
                   App Development
                 </Link>
               </li>
