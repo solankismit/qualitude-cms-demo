@@ -36,7 +36,7 @@ export default function TechnologiesPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-blue-50/20 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900">
+      <div className="relative min-h-[91vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-blue-50/20 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
           <div className="absolute inset-0 bg-background/90 dark:bg-gray-950/90" />
         </div>
