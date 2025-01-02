@@ -2,7 +2,7 @@
 import { courses } from "@/lib/courses";
 import { CourseHero } from "@/components/courses/course-hero";
 import { CourseFeatures } from "@/components/courses/course-features";
-import { CourseCurriculum } from "@/components/courses/course-curriculum";
+import  CourseCurriculum from "@/components/courses/course-curriculum";
 import { RegistrationForm } from "@/components/courses/registration-form";
 import { notFound } from "next/navigation";
 export async function generateStaticParams() {
@@ -27,7 +27,7 @@ export default function CoursePage({ params }: { params: { courseId: string } })
           schedule={course.schedule}
           skills={course.skills}
         />
-        <CourseCurriculum curriculum={course.curriculum} />
+        <CourseCurriculum course={course} />
         <RegistrationForm courseId={course.id} courseTitle={course.title} />
       </div>
     </div>
