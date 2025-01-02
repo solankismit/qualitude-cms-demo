@@ -14,6 +14,7 @@ export interface Course {
     title: string;
     description: string;
   }[];
+  heroImage?: string;
 }
 
 export const courses: Course[] = [
@@ -104,6 +105,7 @@ export const courses: Course[] = [
         description: "Develop both client and server-side applications",
       },
     ],
+    heroImage: "/courses/web-dev-hero.jpg",
   },
   {
     id: "mobile-development",
@@ -192,6 +194,7 @@ export const courses: Course[] = [
         description: "Build applications that run on multiple platforms",
       },
     ],
+    heroImage: "/courses/mobile-dev-hero.jpg",
   },
 ];
 

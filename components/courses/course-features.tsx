@@ -12,9 +12,9 @@ interface CourseFeatureProps {
 
 export function CourseFeatures({ duration, schedule, skills }: CourseFeatureProps) {
   return (
-    <section className="py-16 px-10 md:px-20">
+    <section className=" sm:px-10 md:px-20">
       <div className="container max-w-6xl mx-auto text-left">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export function CourseFeatures({ duration, schedule, skills }: CourseFeatureProp
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="md:col-span-2 lg:col-span-1"
+            className="md:col-span-2 lg:col-span-2"
           >
             <Card className="p-8 h-full hover:shadow-lg transition-all">
               <Trophy className="h-10 w-10 mb-6 text-blue-600 dark:text-blue-400" />
