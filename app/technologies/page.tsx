@@ -123,22 +123,22 @@ export default function TechnologiesPage() {
             </p>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
             <ServiceCard
               title="App Development"
-              description="Native and cross-platform mobile applications built with the latest technologies."
+              description="Native and cross-platform mobile applications built with the latest technologies. We specialize in creating intuitive and performant apps that users love."
               icon={Smartphone}
               href="/technologies/app-development"
             />
             <ServiceCard
               title="Web Development"
-              description="Modern, responsive websites and web applications optimized for performance."
+              description="Modern, responsive websites and web applications optimized for performance. From simple landing pages to complex web applications, we've got you covered."
               icon={Code}
               href="/technologies/web-development"
             />
             <ServiceCard
               title="AI Solutions"
-              description="Intelligent systems and machine learning solutions for business automation."
+              description="Intelligent systems and machine learning solutions for business automation. Leverage the power of AI to streamline your operations and gain valuable insights."
               icon={Brain}
               href="/technologies/ai"
             />
