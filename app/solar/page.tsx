@@ -1,11 +1,27 @@
+"use client";
+
+import { HeroSection } from "@/components/solar/sections/hero-section";
+import { BenefitsSection } from "@/components/solar/sections/benefits-section";
+import { ServicesSection } from "@/components/solar/sections/services-section";
+import { FeaturesSection } from "@/components/solar/sections/features-section";
+import { ProcessSection } from "@/components/solar/sections/process-section";
+import { Gallery } from "@/components/solar/gallery";
+import { ContactForm } from "@/components/solar/contact-form";
+
 export default function SolarPage() {
   return (
-    <div className="container p-20 text-center align-middle my-auto">
-      <h1 className="mb-6 text-4xl font-bold">Coming Soon</h1>
-      <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-        We're working on bringing you innovative solar solutions. Stay tuned for
-        updates on our sustainable energy offerings.
-      </p>
+    <div className="relative">
+      <HeroSection />
+      <BenefitsSection />
+      <ServicesSection />
+      <FeaturesSection />
+      <ProcessSection />
+      <div id="gallery">
+        <Gallery />
+      </div>
+      <div id="contact">
+        <ContactForm />
+      </div>
     </div>
   );
 }
