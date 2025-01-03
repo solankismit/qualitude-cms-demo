@@ -60,14 +60,12 @@ export default function TechnologiesPage() {
               and comprehensive learning programs.
             </p>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
+               {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20,x: "-50%" }}
           animate={{ opacity: 1, y: 0 ,x: "-50%"}}
           transition={{ delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-muted-foreground">
             <motion.div
@@ -78,6 +76,9 @@ export default function TechnologiesPage() {
             <span className="text-sm">Scroll to explore</span>
           </div>
         </motion.div>
+        </motion.div>
+
+   
       </div>
 
       {/* Features Section */}
