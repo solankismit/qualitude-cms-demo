@@ -24,31 +24,34 @@ export function Header() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
-    if (href === "/solar") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      setIsMobileMenuOpen(false);
-      return;
-    }
+    // Close menu first
+    setIsMobileMenuOpen(false);
 
-    const targetId = href.split("#")[1];
-    if (!targetId) return;
+    // Use setTimeout to ensure menu closing animation completes before scrolling
+    setTimeout(() => {
+      if (href === "/solar") {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        return;
+      }
 
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 80; // Height of the fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-
-      setIsMobileMenuOpen(false);
-    }
+      const targetId = href.split("#")[1];
+      if (!targetId) return;
+      
+      const element = document.getElementById(targetId);
+      if (element) {
+        const offset = 80; // Height of the fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 300); // Match this with your menu closing animation duration
   };
 
   const navItems = [
@@ -61,7 +64,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
@@ -95,7 +98,6 @@ export function Header() {
               <Phone className="w-4 h-4 text-blue-500" />
               <span className="font-medium">{contact.phone}</span>
             </div>
-            <Button>Get a Quote</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,32 +127,56 @@ export function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden py-4"
-            >
-              <nav className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="text-sm font-medium text-muted-foreground hover:text-blue-500 transition-colors cursor-pointer"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-                  <Button className="w-full">Get a Quote</Button>
-                </div>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="md:hidden overflow-hidden">
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ 
+                  height: "auto", 
+                  opacity: 1,
+                  transition: {
+                    height: { duration: 0.3 },
+                    opacity: { duration: 0.2, delay: 0.1 }
+                  }
+                }}
+                exit={{ 
+                  height: 0, 
+                  opacity: 0,
+                  transition: {
+                    height: { duration: 0.3 },
+                    opacity: { duration: 0.2 }
+                  }
+                }}
+                className="overflow-hidden border-t border-gray-200/20 dark:border-gray-800/20"
+              >
+                <motion.nav 
+                  initial={{ y: -20 }}
+                  animate={{ y: 0 }}
+                  exit={{ y: -20 }}
+                  className="flex flex-col space-y-4 py-4"
+                >
+                  {navItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className="text-sm font-medium text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors cursor-pointer px-4"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                  <div className="px-4 pt-4 border-t border-gray-200/20 dark:border-gray-800/20">
+                    <div className="flex items-center space-x-2 text-sm">
+                      <Phone className="w-4 h-4 text-blue-500" />
+                      <span className="font-medium text-gray-800 dark:text-gray-200">{contact.phone}</span>
+                    </div>
+                  </div>
+                </motion.nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </header>
   );
