@@ -12,12 +12,6 @@ export function Footer() {
       { name: "Gallery", href: "/solar#gallery" },
       { name: "Contact", href: "/solar#contact" },
     ],
-    services: [
-      { name: "Residential Solar", href: "/solar#residential" },
-      { name: "Commercial Solar", href: "/solar#commercial" },
-      { name: "Energy Storage", href: "/solar#storage" },
-      { name: "Maintenance", href: "/solar#maintenance" },
-    ],
     social: [
       { name: "Facebook", icon: Facebook, href: "#" },
       { name: "Twitter", icon: Twitter, href: "#" },
@@ -30,9 +24,9 @@ export function Footer() {
     <footer className="bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-col lg:flex-row justify-between gap-12">
             {/* Company Info */}
-            <div className="space-y-4">
+            <div className="space-y-4 lg:max-w-sm">
               <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
                 QUALITUDE SOLAR
               </h3>
@@ -56,82 +50,87 @@ export function Footer() {
                   );
                 })}
               </div>
+
+            
             </div>
 
-            {/* Company Links */}
-            <div>
-              <h3 className="text-sm font-semibold mb-4">Company</h3>
-              <ul className="space-y-3">
-                {navigation.company.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-muted-foreground hover:text-blue-500 transition-colors"
-                    >
-                      {item.name}
+            {/* Right Side Links */}
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-24">
+              {/* Company Links */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4">Company</h3>
+                <ul className="space-y-3">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="text-sm text-muted-foreground hover:text-blue-500 transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Legal Links */}
+              {/* <div>
+                <h3 className="text-sm font-semibold mb-4">Legal</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="#" className="text-sm text-muted-foreground hover:text-blue-500 transition-colors">
+                      Privacy Policy
                     </Link>
                   </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services Links */}
-            <div>
-              <h3 className="text-sm font-semibold mb-4">Services</h3>
-              <ul className="space-y-3">
-                {navigation.services.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-muted-foreground hover:text-blue-500 transition-colors"
-                    >
-                      {item.name}
+                  <li>
+                    <Link href="#" className="text-sm text-muted-foreground hover:text-blue-500 transition-colors">
+                      Terms of Service
                     </Link>
                   </li>
-                ))}
-              </ul>
-            </div>
+                </ul>
+              </div> */}
 
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-sm font-semibold mb-4">Contact Us</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href={`tel:${contact.phone}`}
-                    className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
-                  >
-                    <Phone className="h-4 w-4" />
-                    <span>{contact.phone}</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
-                  >
-                    <Mail className="h-4 w-4" />
-                    <span>{contact.email}</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`https://${contact.website}`}
-                    className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Globe className="h-4 w-4" />
-                    <span>{contact.website}</span>
-                  </a>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">
-                    123 Solar Street, Green City, 12345
-                  </span>
-                </li>
-              </ul>
+                {/* Contact Info */}
+                <div>
+                <h3 className="text-sm font-semibold mb-4">Company</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a
+                      href={`tel:${contact.phone}`}
+                      className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
+                    >
+                      <Phone className="h-4 w-4" />
+                      <span>{contact.phone}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
+                    >
+                      <Mail className="h-4 w-4" />
+                      <span>{contact.email}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`https://${contact.website}`}
+                      className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Globe className="h-4 w-4" />
+                      <span>{contact.website}</span>
+                    </a>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">
+                      123 Solar Street, Green City, 12345
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

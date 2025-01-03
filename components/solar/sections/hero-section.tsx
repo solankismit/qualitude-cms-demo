@@ -21,7 +21,7 @@ export function HeroSection() {
           transition={{ delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200 mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl !leading-tight font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200 mb-6 ">
             {solarHero.title}
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
@@ -31,15 +31,15 @@ export function HeroSection() {
             {solarHero.description}
           </p>
         </motion.div>
-      </motion.div>
+      
 
       {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0, y: 20, x: "-50%" }}
-        animate={{ opacity: 1, y: 0, x: "-50%" }}
-        transition={{ delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
+          initial={{ opacity: 0, y: 20,x: "-50%" }}
+          animate={{ opacity: 1, y: 0 ,x: "-50%"}}
+          transition={{ delay: 0.8 }}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2"
+        >
         <div className="flex flex-col items-center text-muted-foreground">
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -48,6 +48,7 @@ export function HeroSection() {
           />
           <span className="text-sm">Scroll to explore</span>
         </div>
+      </motion.div>
       </motion.div>
     </div>
   );

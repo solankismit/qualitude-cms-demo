@@ -1,6 +1,6 @@
 export const solarHero = {
   title: "Your Trusted Partner in Clean, Sustainable Energy Solutions",
-  subtitle: "At QUALITUDE SOLAR, we are committed to powering your future with renewable energy.",
+  subtitle: "At Qualitude, we are committed to powering your future with renewable energy.",
   description: "Specializing in custom solar panel installations, energy storage systems, and comprehensive maintenance services, we provide innovative solutions that reduce your energy costs while protecting the environment."
 };
 
@@ -81,22 +81,33 @@ export const process = [
 ];
 
 export const gallery = [
+  
   {
-    title: "Residential Installation",
-    image: "/images/solar/residential-1.jpg"
-  },
-  {
-    title: "Commercial Project",
-    image: "/images/solar/commercial-1.jpg"
+    title: "Solar Heater",
+    image: "/images/solar/5.jpg"
   },
   {
     title: "Solar Panels",
-    image: "/images/solar/panels-1.jpg"
+    image: "/images/solar/1.jpg"
   },
   {
-    title: "Energy Storage",
-    image: "/images/solar/storage-1.jpg"
+    title: "Solar Panels",
+    image: "/images/solar/2.jpg"
+  },
+  {
+    title: "Solar Panels",
+    image: "/images/solar/3.jpg"
+  },
+  
+  {
+    title: "Solar Panels",
+    image: "/images/solar/4.jpg"
+  },
+  {
+    title: "Solar Panels",
+    image: "/images/solar/6.jpg"
   }
+  
 ];
 
 export const contact = {
