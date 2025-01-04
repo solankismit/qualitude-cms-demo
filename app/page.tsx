@@ -54,7 +54,7 @@ export default function Page() {
           </div>
           <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4">
             <span className="bg-gradient-to-r from-white to-white md:from-cyan-200 md:to-white bg-clip-text text-transparent">
-              Qualitude Technologies
+              Qualitude I.T. Solutions
             </span>
           </h1>
           <p className="text-base md:text-xl max-w-md text-white/90 md:opacity-80 md:group-hover:opacity-100">
