@@ -167,10 +167,10 @@ export function Header() {
                     </a>
                   ))}
                   <div className="px-4 pt-4 border-t border-gray-200/20 dark:border-gray-800/20">
-                    <div className="flex items-center space-x-2 text-sm">
+                    <Link href={`tel:${contact.phone}`} className="flex items-center space-x-2 text-sm">
                       <Phone className="w-4 h-4 text-blue-500" />
                       <span className="font-medium text-gray-800 dark:text-gray-200">{contact.phone}</span>
-                    </div>
+                    </Link>
                   </div>
                 </motion.nav>
               </motion.div>
