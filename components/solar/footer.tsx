@@ -13,10 +13,10 @@ export function Footer() {
       { name: "Contact", href: "/solar#contact" },
     ],
     social: [
-      { name: "Facebook", icon: Facebook, href: "#" },
-      { name: "Twitter", icon: Twitter, href: "#" },
-      { name: "Instagram", icon: Instagram, href: "#" },
-      { name: "LinkedIn", icon: Linkedin, href: "#" },
+      { name: "Facebook", icon: Facebook, href: "https://facebook.com/qualitudetechnology/" },
+      // { name: "Twitter", icon: Twitter, href: "#" },
+      { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/qualitudesolar/profilecard/?igsh=MTZia293MndvamZoaQ==" },
+      // { name: "LinkedIn", icon: Linkedin, href: "#" },
     ],
   };
 
@@ -126,8 +126,7 @@ export function Footer() {
                   <li className="flex items-start space-x-2">
                     <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">
-                      123 Solar Street, Green City, 12345
-                    </span>
+                    {contact.address}</span>
                   </li>
                 </ul>
               </div>

@@ -111,7 +111,8 @@ export const gallery = [
 ];
 
 export const contact = {
-  phone: "1233232129",
+  phone: "9909915808",
   email: "qualitudetechnology@gmail.com",
-  website: "www.qualitude.co.in"
+  website: "www.qualitude.co.in",
+  address:"123, Baba Complex, Zanzarda Road, Junagadh"
 }; 
