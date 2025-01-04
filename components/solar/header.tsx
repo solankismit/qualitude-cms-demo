@@ -74,7 +74,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
-              QUALITUDE SOLAR
+              Qualitude Solar
             </span>
           </Link>
 
@@ -94,10 +94,10 @@ export function Header() {
 
           {/* Contact Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm">
+            <Link href={`tel:${contact.phone}`} className="flex items-center space-x-2 text-sm">
               <Phone className="w-4 h-4 text-blue-500" />
               <span className="font-medium">{contact.phone}</span>
-            </div>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
