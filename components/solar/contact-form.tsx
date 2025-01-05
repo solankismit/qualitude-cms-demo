@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, Globe } from "lucide-react";
 import { contact } from "@/app/solar/data";
+import Link from "next/link";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,43 +36,43 @@ export function ContactForm() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-evenly"
           >
-            <div className="flex items-center space-x-4">
+            <div className="w-full flex items-start space-x-4">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Phone className="w-6 h-6 text-blue-500" />
               </div>
               <div>
                 <h3 className="font-medium">Phone</h3>
-                <p className="text-muted-foreground">{contact.phone}</p>
+                <Link href={`tel:${contact.phone}`} className="text-muted-foreground">{contact.phone}</Link>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="w-full flex items-start space-x-4">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Mail className="w-6 h-6 text-blue-500" />
               </div>
               <div>
                 <h3 className="font-medium">Email</h3>
-                <p className="text-muted-foreground">{contact.email}</p>
+                <Link href={`mailto:${contact.email}`} className="text-muted-foreground">{contact.email}</Link>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="w-full flex items-start space-x-4">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Globe className="w-6 h-6 text-blue-500" />
               </div>
               <div>
                 <h3 className="font-medium">Website</h3>
-                <p className="text-muted-foreground">{contact.website}</p>
+                <Link href={`https://${contact.website}`} className="text-muted-foreground">{contact.website}</Link>
               </div>
             </div>
           </motion.div>
 
-          <motion.form
+          {/* <motion.form
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -111,7 +112,7 @@ export function ContactForm() {
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
-          </motion.form>
+          </motion.form> */}
         </div>
       </div>
     </div>

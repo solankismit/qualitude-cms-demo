@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { Cpu } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className=" px-10 md:px-20 py-8 md:py-12">
+      <div className=" px-5 md:px-20 py-8 md:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <Cpu className="h-6 w-6" />
-              <span className="font-bold">Qualitude</span>
-            </Link>
+            {/* <Image src="/logo.png" alt="Qualitude Logo" width={50} height={50} /> */}
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
+              Qualitude IT Solution
+            </span></Link>
             <p className="text-sm text-muted-foreground">
               Empowering innovation through technology and sustainable solutions.
             </p>
@@ -39,12 +41,12 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground">
+                <Link href="/technologies/about" className="text-muted-foreground hover:text-foreground">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground">
+                <Link href="/technologies/contact" className="text-muted-foreground hover:text-foreground">
                   Contact
                 </Link>
               </li>

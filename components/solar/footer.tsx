@@ -28,7 +28,7 @@ export function Footer() {
             {/* Company Info */}
             <div className="space-y-4 lg:max-w-sm">
               <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
-                QUALITUDE SOLAR
+                Qualitude Solar
               </h3>
               <p className="text-sm text-muted-foreground">
                 Your trusted partner in clean, sustainable energy solutions.
@@ -113,7 +113,7 @@ export function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href={`https://${contact.website}`}
                       className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
                       target="_blank"
@@ -121,12 +121,19 @@ export function Footer() {
                     >
                       <Globe className="h-4 w-4" />
                       <span>{contact.website}</span>
-                    </a>
+                    </Link>
                   </li>
-                  <li className="flex items-start space-x-2">
+                  <li>
+                  <Link
+                      href={`https://maps.app.goo.gl/ex5uPq1sEE2EpJ627`}
+                      className="text-sm text-muted-foreground hover:text-blue-500 transition-colors flex items-center space-x-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                     <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
+                    <span>
                     {contact.address}</span>
+                    </Link>
                   </li>
                 </ul>
               </div>

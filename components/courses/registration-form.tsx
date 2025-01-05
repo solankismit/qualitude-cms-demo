@@ -36,7 +36,7 @@ export function RegistrationForm({ courseId, courseTitle }: RegistrationFormProp
               Register for {courseTitle}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <Label htmlFor="name" className="text-lg">Full Name</Label>
                 <Input 
                   id="name" 
@@ -64,9 +64,13 @@ export function RegistrationForm({ courseId, courseTitle }: RegistrationFormProp
                   required 
                   className="h-12 text-lg"
                 />
-              </div>
+              </div> */}
               <Button 
-                type="submit" 
+              
+                onClick={() => {
+                  window.open("https://docs.google.com/forms/d/e/1FAIpQLScRJtnLRuqM2YPjMFJOjOzfBvBh_EQb3K2ILY1FotsX0urMKw/viewform", "_blank");
+                }}
+                type="button"
                 size="lg"
                 className="w-full text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500" 
                 disabled={isSubmitting}

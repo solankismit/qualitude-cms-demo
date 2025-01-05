@@ -23,7 +23,9 @@ export function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             {/* <Cpu className="h-6 w-6" /> */}
             <Image src="/logo.png" alt="Qualitude Logo" width={50} height={50} />
-            <span className="font-bold">Qualitude IT Solutions</span>
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
+              Qualitude IT Solution
+            </span>
           </Link>
           <div className="hidden md:flex md:gap-6">
             {/* <Link href="/technologies" className="text-foreground/60 transition-colors hover:text-foreground">
@@ -37,8 +39,8 @@ export function Navbar() {
             </Link> */}
           </div>
         </div>
-        <div className="flex items-center gap-4">
-          <Link href="/contact">
+        <div className=" items-center gap-4 hidden md:flex">
+          <Link href="/technologies/contact">
             <Button>Contact Us</Button>
           </Link>
           {/* <Button
@@ -69,8 +71,8 @@ export function Navbar() {
               Solar
             </Link> */}
             <Link
-              href="/contact"
-              className="text-foreground/60 transition-colors hover:text-foreground"
+              href="/technologies/contact"
+              className="text-foreground/60 transition-colors hover:text-foreground hidden md:block"
               onClick={() => setIsOpen(false)}
             >
               Contact

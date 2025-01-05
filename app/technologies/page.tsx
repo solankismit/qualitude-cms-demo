@@ -210,11 +210,11 @@ export default function TechnologiesPage() {
       </div>
 
       {/* Inquiry Form */}
-      <div className="bg-gray-50 dark:bg-gray-900">
+      {/* <div className="bg-gray-50 dark:bg-gray-900">
         <div className="">
           <InquiryForm />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
