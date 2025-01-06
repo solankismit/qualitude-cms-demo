@@ -25,15 +25,15 @@ export default function CourseCurriculum({ course }: CourseCurriculumProps) {
         <Accordion type="single" collapsible className="w-full">
           {course.curriculum.map((week, index) => (
             <AccordionItem
-              key={week.week}
-              value={`week-${week.week}`}
+              key={index}
+              value={`week-${index + 1}`}
               className="px-4 sm:px-6"
             >
               <AccordionTrigger className="py-4 sm:py-6 hover:no-underline group">
                 <div className="flex items-center min-w-0 w-full pr-6 sm:pr-8">
                   <div className="flex-shrink-0 mr-4 sm:mr-6">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 dark:bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                      {week.week}
+                      {index + 1}
                     </div>
                   </div>
                   <div className="flex-1 min-w-0 text-left">
@@ -62,7 +62,7 @@ export default function CourseCurriculum({ course }: CourseCurriculumProps) {
                         </div>
                       </div>
                       <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 break-words">
-                        {topic}
+                        {topic.topic}
                       </span>
                     </motion.div>
                   ))}

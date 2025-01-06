@@ -1,0 +1,78 @@
+{
+  "title": "Web Development Internship",
+  "description": "Master modern web development with React, Next.js, and Node.js",
+  "duration": "12 weeks",
+  "schedule": "Monday to Friday, 4 hours per day",
+  "heroImage": "/courses/web-dev-hero.jpg",
+  "skills": [
+    { "skill": "React.js" },
+    { "skill": "Next.js" },
+    { "skill": "Node.js" },
+    { "skill": "TypeScript" },
+    { "skill": "Tailwind CSS" },
+    { "skill": "REST APIs" },
+    { "skill": "Database Design" }
+  ],
+  "curriculum": [
+    {
+      "title": "Web Fundamentals",
+      "topics": [
+        { "topic": "HTML5" },
+        { "topic": "CSS3" },
+        { "topic": "JavaScript ES6+" },
+        { "topic": "Git Basics" }
+      ]
+    },
+    {
+      "title": "React Fundamentals",
+      "topics": [
+        { "topic": "Components" },
+        { "topic": "Props" },
+        { "topic": "State" },
+        { "topic": "Hooks" },
+        { "topic": "Context" }
+      ]
+    },
+    {
+      "title": "Advanced React",
+      "topics": [
+        { "topic": "Performance Optimization" },
+        { "topic": "Error Boundaries" },
+        { "topic": "Render Props" },
+        { "topic": "Higher-Order Components" }
+      ]
+    }
+  ],
+  "careers": [
+    {
+      "title": "Frontend Developer",
+      "description": "Build user interfaces for web applications"
+    },
+    {
+      "title": "Full Stack Developer",
+      "description": "Develop both client and server-side applications"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Industry-Focused",
+      "description": "Curriculum designed with real-world applications in mind",
+      "icon": "Target"
+    },
+    {
+      "title": "Interactive Learning",
+      "description": "Engage in group projects and peer-to-peer learning",
+      "icon": "Users"
+    },
+    {
+      "title": "Hands-on Practice",
+      "description": "Work on real projects with practical assignments",
+      "icon": "Zap"
+    },
+    {
+      "title": "Certification",
+      "description": "Earn a verified certificate upon completion",
+      "icon": "Award"
+    }
+  ]
+} 

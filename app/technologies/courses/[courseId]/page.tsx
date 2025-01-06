@@ -1,67 +1,44 @@
-import { courses } from "@/lib/courses";
-import { CourseHero } from "@/components/courses/course-hero";
-import { CourseFeatures } from "@/components/courses/course-features";
-import CourseCurriculum from "@/components/courses/course-curriculum";
-import { RegistrationForm } from "@/components/courses/registration-form";
-import { CourseHighlights } from "@/components/courses/course-highlights";
-import { CourseTestimonials } from "@/components/courses/course-testimonials";
 import { notFound } from "next/navigation";
+import { client } from "@/tina/__generated__/client";
+import { CoursePageClient } from "@/components/courses/course-page-client";
 
 export async function generateStaticParams() {
-  return courses.map((course) => ({
-    courseId: course.id,
-  }));
+  const coursesResponse = await client.queries.courseConnection();
+  console.log("@@courseResponse::")
+  coursesResponse.data.courseConnection.edges?.map((c)=>{
+    console.log(c?.node?._sys.filename);
+    
+  })
+  console.log("@@courseResponse----")
+  return coursesResponse.data.courseConnection.edges?.map((course) => ({
+    courseId: course?.node?._sys.filename,
+  })) || [];
 }
 
-export default function CoursePage({ params }: { params: { courseId: string } }) {
-  const course = courses.find((c) => c.id === params.courseId);
+export default async function CoursePage({ params }: { params: { courseId: string } }) {
+  console.log("IN CoursePage", params.courseId);
 
-  if (!course) {
+  try {
+    const courseResponse = await client.queries.course({
+      relativePath: `${params.courseId}.json`,
+    });
+
+    console.log("Course Response:", courseResponse);
+
+    if (!courseResponse.data.course) {
+      console.error("Course not found for:", params.courseId);
+      notFound();
+    }
+
+    return (
+      <CoursePageClient 
+        data={courseResponse.data}
+        query={courseResponse.query}
+        variables={courseResponse.variables}
+      />
+    );
+  } catch (error) {
+    console.error("Error fetching course data:", error);
     notFound();
   }
-
-  return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <CourseHero 
-        title={course.title} 
-        description={course.description}
-        image={course.heroImage}
-      />
-      
-      {/* Content Wrapper */}
-      <div className="relative bg-gradient-to-b from-background via-background to-gray-50 dark:to-gray-900/50">
-        {/* Curved Separator */}
-        <div className="absolute inset-x-0 -top-20 h-20 bg-gradient-to-b from-transparent to-background" />
-        
-        {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="py-8 sm:py-12">
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-              {/* Left Column - Main Content */}
-              <div className="xl:col-span-2 space-y-8">
-                <CourseFeatures
-                  duration={course.duration}
-                  schedule={course.schedule}
-                  skills={course.skills}
-                />
-                <CourseHighlights course={course} />
-                <CourseCurriculum course={course} />
-              </div>
-              
-              {/* Right Column - Registration Form */}
-              <div className="xl:col-span-1">
-                <div className="sticky top-24 rounded-xl shadow-lg border ">
-                  <RegistrationForm courseId={course.id} courseTitle={course.title} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Testimonials Section */}
-      {/* <CourseTestimonials courseId={course.id} /> */}
-    </div>
-  );
 }

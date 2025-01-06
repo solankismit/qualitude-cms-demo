@@ -1,0 +1,115 @@
+{
+  "title": "Mobile App Development Internship",
+  "description": "Master mobile app development with React Native and Flutter",
+  "duration": "12 weeks",
+  "schedule": "Monday to Friday, 4 hours per day",
+  "heroImage": "/courses/mobile-dev-hero.jpg",
+  "skills": [
+    {
+      "skill": "Flutter"
+    },
+    {
+      "skill": "React Native"
+    },
+    {
+      "skill": "TypeScript"
+    },
+    {
+      "skill": "Dart"
+    },
+    {
+      "skill": "REST APIs"
+    },
+    {
+      "skill": "Firebase"
+    },
+    {
+      "skill": "Mobile UI/UX Design"
+    }
+  ],
+  "curriculum": [
+    {
+      "title": "Mobile Development Fundamentals",
+      "topics": [
+        {
+          "topic": "React Native Basics"
+        },
+        {
+          "topic": "Flutter Basics"
+        },
+        {
+          "topic": "JavaScript ES6+"
+        },
+        {
+          "topic": "Dart Basics"
+        }
+      ]
+    },
+    {
+      "title": "React Native Advanced",
+      "topics": [
+        {
+          "topic": "Components"
+        },
+        {
+          "topic": "State Management"
+        },
+        {
+          "topic": "Navigation"
+        },
+        {
+          "topic": "APIs"
+        }
+      ]
+    },
+    {
+      "title": "Flutter Advanced",
+      "topics": [
+        {
+          "topic": "Widgets"
+        },
+        {
+          "topic": "State Management"
+        },
+        {
+          "topic": "Navigation"
+        },
+        {
+          "topic": "Animations"
+        }
+      ]
+    }
+  ],
+  "careers": [
+    {
+      "title": "Mobile App Developer",
+      "description": "Develop mobile applications for iOS and Android"
+    },
+    {
+      "title": "Cross-Platform Developer",
+      "description": "Build applications that run on multiple platforms"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Cross-Platform Focus",
+      "description": "Learn to build apps for both iOS and Android platforms",
+      "icon": "Target"
+    },
+    {
+      "title": "Collaborative Learning",
+      "description": "Work in teams to build real-world mobile applications",
+      "icon": "Users"
+    },
+    {
+      "title": "Rapid Development",
+      "description": "Master modern frameworks for fast app development",
+      "icon": "Zap"
+    },
+    {
+      "title": "Industry Recognition",
+      "description": "Get certified in mobile app development",
+      "icon": "Award"
+    }
+  ]
+}
