@@ -9,11 +9,11 @@
       "description": "Build applications that run on multiple platforms"
     }
   ],
+  "heroImage": "/courses/mobile-dev-hero.jpg",
   "title": "Mobile App Development Internship",
   "description": "Master mobile app development with React Native and Flutter",
   "duration": "12 weeks",
   "schedule": "Monday to Friday, 4 hours per day",
-  "heroImage": "/courses/mobile-dev-hero.jpg",
   "skills": [
     "Flutter",
     "React Native",
@@ -47,20 +47,31 @@
   ],
   "curriculum": [
     {
-      "title": "aas",
-      "topics": ["saas"]
-    },
-    {
       "title": "Mobile Development Fundamentals",
-      "topics": ["React Native Basics", "Flutter Basics", "JavaScript ES6+", "Dart Basics"]
+      "topics": [
+        "React Native Basics",
+        "Flutter Basics",
+        "JavaScript ES6+",
+        "Dart Basics"
+      ]
     },
     {
       "title": "React Native Advanced",
-      "topics": ["Components", "State Management", "Navigation", "APIs"]
+      "topics": [
+        "Components",
+        "State Management",
+        "Navigation",
+        "APIs"
+      ]
     },
     {
       "title": "Flutter Advanced",
-      "topics": ["Widgets", "State Management", "Navigation", "Animations"]
+      "topics": [
+        "Widgets",
+        "State Management",
+        "Navigation",
+        "Animations"
+      ]
     }
   ]
 }
