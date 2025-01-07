@@ -1,4 +1,14 @@
 {
+  "careers": [
+    {
+      "title": "Mobile App Developer",
+      "description": "Develop mobile applications for iOS and Android"
+    },
+    {
+      "title": "Cross-Platform Developer",
+      "description": "Build applications that run on multiple platforms"
+    }
+  ],
   "title": "Mobile App Development Internship",
   "description": "Master mobile app development with React Native and Flutter",
   "duration": "12 weeks",
@@ -27,7 +37,30 @@
       "skill": "Mobile UI/UX Design"
     }
   ],
+  "highlights": [
+    {
+      "title": "Cross-Platform Focus",
+      "description": "Learn to build apps for both iOS and Android platforms",
+      "icon": "Target"
+    },
+    {
+      "title": "Collaborative Learning",
+      "description": "Work in teams to build real-world mobile applications",
+      "icon": "Users"
+    },
+    {
+      "title": "Rapid Development",
+      "description": "Master modern frameworks for fast app development",
+      "icon": "Zap"
+    },
+    {
+      "title": "Industry Recognition",
+      "description": "Get certified in mobile app development",
+      "icon": "Award"
+    }
+  ],
   "curriculum": [
+    {},
     {
       "title": "Mobile Development Fundamentals",
       "topics": [
@@ -78,38 +111,6 @@
           "topic": "Animations"
         }
       ]
-    }
-  ],
-  "careers": [
-    {
-      "title": "Mobile App Developer",
-      "description": "Develop mobile applications for iOS and Android"
-    },
-    {
-      "title": "Cross-Platform Developer",
-      "description": "Build applications that run on multiple platforms"
-    }
-  ],
-  "highlights": [
-    {
-      "title": "Cross-Platform Focus",
-      "description": "Learn to build apps for both iOS and Android platforms",
-      "icon": "Target"
-    },
-    {
-      "title": "Collaborative Learning",
-      "description": "Work in teams to build real-world mobile applications",
-      "icon": "Users"
-    },
-    {
-      "title": "Rapid Development",
-      "description": "Master modern frameworks for fast app development",
-      "icon": "Zap"
-    },
-    {
-      "title": "Industry Recognition",
-      "description": "Get certified in mobile app development",
-      "icon": "Award"
     }
   ]
 }
