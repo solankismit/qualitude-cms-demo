@@ -44,6 +44,7 @@ export default defineConfig({
             name: "careers",
             label: "Careers",
             list: true,
+            
             ui: {
               itemProps: (item) => ({
                 label: item.title,
@@ -54,27 +55,34 @@ export default defineConfig({
                 type: "string",
                 name: "title",
                 label: "Title",
-                required: true,
+                // required: true,
+                
               },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
-                required: true,
+                // required: true,
               },
             ],
           },
+            {
+            type: "string",
+            name: "heroImage",
+            label: "Hero Image",
+          },
+  
           {
             type: "string",
             name: "title",
             label: "Title",
-            required: true,
+            // required: true,
           },
           {
             type: "string",
             name: "description",
             label: "Description",
-            required: true,
+            // required: true,
             ui: {
               component: "textarea"
             }
@@ -83,36 +91,31 @@ export default defineConfig({
             type: "string",
             name: "duration",
             label: "Duration",
-            required: true,
+            // required: true,
           },
           {
             type: "string",
             name: "schedule",
             label: "Schedule",
-            required: true,
+            // required: true,
           },
           {
             type: "string",
-            name: "heroImage",
-            label: "Hero Image",
-          },
-          {
-            type: "object",
             name: "skills",
             label: "Skills",
             list: true,
-            ui: {
-              itemProps: (item) => ({
-                label: item.skill,
-              }),
-            },
-            fields: [
-              {
-                type: "string",
-                name: "skill",
-                label: "Skill",
-              },
-            ],
+            // ui: {
+            //   itemProps: (item) => ({
+            //     label: item.skill,
+            //   }),
+            // },
+            // fields: [
+            //   {
+            //     type: "string",
+            //     name: "skill",
+            //     label: "Skill",
+            //   },
+            // ],
           },
           {
             type: "object",
@@ -129,19 +132,19 @@ export default defineConfig({
                 type: "string",
                 name: "title",
                 label: "Title",
-                required: true,
+                // required: true,
               },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
-                required: true,
+                // required: true,
               },
               {
                 type: "string",
                 name: "icon",
                 label: "Icon",
-                required: true,
+                // required: true,
                 options: ["Target", "Users", "Zap", "Award"],
               },
             ],
@@ -161,25 +164,25 @@ export default defineConfig({
                 type: "string",
                 name: "title",
                 label: "Title",
-                required: true,
+                // required: true,
               },
               {
-                type: "object",
+                type: "string",
                 name: "topics",
                 label: "Topics",
                 list: true,
-                ui: {
-                  itemProps: (item) => ({
-                    label: item.topic,
-                  }),
-                },
-                fields: [
-                  {
-                    type: "string",
-                    name: "topic",
-                    label: "Topic",
-                  },
-                ],
+                // ui: {
+                //   itemProps: (item) => ({
+                //     label: item.topic,
+                //   }),
+                // },
+                // fields: [
+                //   {
+                //     type: "string",
+                //     name: "topic",
+                //     label: "Topic",
+                //   },
+                // ],
               },
             ],
           },

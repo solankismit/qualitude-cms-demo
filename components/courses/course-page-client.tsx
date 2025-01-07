@@ -24,14 +24,18 @@ export function CoursePageClient({ data, query, variables }: CoursePageClientPro
 
   const course = tinaData.course as Course;
 
+  if (!course) return null; // Check if course is null and return early if true
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <CourseHero 
-        title={course.title} 
-        description={course.description}
-        image={course.heroImage}
-      />
+      {course.title   && (
+        <CourseHero 
+          title={course.title} 
+          description={course?.description}
+          image={course?.heroImage}
+        />
+      )}
       
       {/* Content Wrapper */}
       <div className="relative bg-gradient-to-b from-background via-background to-gray-50 dark:to-gray-900/50">
@@ -44,23 +48,31 @@ export function CoursePageClient({ data, query, variables }: CoursePageClientPro
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
               {/* Left Column - Main Content */}
               <div className="xl:col-span-2 space-y-8">
-                <CourseFeatures
-                  duration={course.duration}
-                  schedule={course.schedule}
-                  skills={course.skills.map(s => s.skill)}
-                />
-                <CourseHighlights course={course} />
-                <CourseCurriculum course={course} />
+                {course.duration && course.schedule && course.skills && (
+                  <CourseFeatures
+                    duration={course?.duration}
+                    schedule={course?.schedule}
+                    skills={course.skills?.map(s => s)}
+                  />
+                )}
+                {course.highlights && (
+                  <CourseHighlights course={course} />
+                )}
+                {course.curriculum && (
+                  <CourseCurriculum course={course} />
+                )}
               </div>
               
               {/* Right Column - Registration Form */}
               <div className="xl:col-span-1">
-                <div className="sticky top-24 rounded-xl shadow-lg border ">
-                  <RegistrationForm 
-                    courseId={variables.relativePath.replace('.json', '')} 
-                    courseTitle={course.title} 
-                  />
-                </div>
+                {variables.relativePath.replace('.json', '') && course.title && (
+                  <div className="sticky top-24 rounded-xl shadow-lg border ">
+                    <RegistrationForm 
+                      courseId={variables.relativePath.replace('.json', '')} 
+                      courseTitle={course.title} 
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

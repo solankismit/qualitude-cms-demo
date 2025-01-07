@@ -23,8 +23,9 @@ export function CourseHighlights({ course }: CourseHighlightsProps) {
       description="What makes this course special"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-        {course.highlights.map((highlight, index) => {
-          const Icon = IconMap[highlight.icon];
+        {course?.highlights?.map((highlight, index) => {
+          if (!highlight) return <></>; // Check if highlight is null and return early if true
+          const Icon = IconMap[highlight.icon || "Target"];
           return (
             <motion.div
               key={index}

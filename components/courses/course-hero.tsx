@@ -72,7 +72,7 @@ export function CourseHero({ title, description, image = '/course-hero-bg.jpg' }
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto"
           >
-            {description}
+            {description ??""}
           </motion.p>
 
           {/* CTA Buttons */}

@@ -5,10 +5,10 @@ export interface Course {
   description: string;
   duration: string;
   schedule: string;
-  skills: { skill: string }[];
+  skills: string [];
   curriculum: {
     title: string;
-    topics: { topic: string }[];
+    topics: string[];
   }[];
   careers: {
     title: string;
@@ -33,14 +33,11 @@ export function transformTinaCourse(tinaCourse: CourseQuery['course']): Course {
     duration: tinaCourse.duration || '',
     schedule: tinaCourse.schedule || '',
     heroImage: tinaCourse.heroImage || undefined,
-    skills: tinaCourse.skills?.map((s) => ({ 
-      skill: s?.skill || '' 
-    })) || [],
+    skills: tinaCourse.skills?.map((s)=>s||"")||[],
     curriculum: tinaCourse.curriculum?.map((c) => ({
       title: c?.title || '',
-      topics: c?.topics?.map((t) => ({ 
-        topic: t?.topic || '' 
-      })) || [],
+      topics: c?.topics?.map((s)=>s||"")||[],
+      
     })) || [],
     careers: tinaCourse.careers?.map((c) => ({
       title: c?.title || '',

@@ -5,42 +5,26 @@
   "schedule": "Monday to Friday, 4 hours per day",
   "heroImage": "/courses/web-dev-hero.jpg",
   "skills": [
-    { "skill": "React.js" },
-    { "skill": "Next.js" },
-    { "skill": "Node.js" },
-    { "skill": "TypeScript" },
-    { "skill": "Tailwind CSS" },
-    { "skill": "REST APIs" },
-    { "skill": "Database Design" }
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "REST APIs",
+    "Database Design"
   ],
   "curriculum": [
     {
       "title": "Web Fundamentals",
-      "topics": [
-        { "topic": "HTML5" },
-        { "topic": "CSS3" },
-        { "topic": "JavaScript ES6+" },
-        { "topic": "Git Basics" }
-      ]
+      "topics": ["HTML5", "CSS3", "JavaScript ES6+", "Git Basics"]
     },
     {
       "title": "React Fundamentals",
-      "topics": [
-        { "topic": "Components" },
-        { "topic": "Props" },
-        { "topic": "State" },
-        { "topic": "Hooks" },
-        { "topic": "Context" }
-      ]
+      "topics": ["Components", "Props", "State", "Hooks", "Context"]
     },
     {
       "title": "Advanced React",
-      "topics": [
-        { "topic": "Performance Optimization" },
-        { "topic": "Error Boundaries" },
-        { "topic": "Render Props" },
-        { "topic": "Higher-Order Components" }
-      ]
+      "topics": ["Performance Optimization", "Error Boundaries", "Render Props", "Higher-Order Components"]
     }
   ],
   "careers": [

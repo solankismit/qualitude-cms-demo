@@ -38,17 +38,17 @@ export default function CourseCurriculum({ course }: CourseCurriculumProps) {
                   </div>
                   <div className="flex-1 min-w-0 text-left">
                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                      {week.title}
+                      {week?.title ??""}
                     </h3>
                     <p className="text-sm text-muted-foreground hidden sm:block">
-                      {week.topics.length} topics
+                      {week?.topics?.length ??""} topics
                     </p>
                   </div>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="pt-2 pb-6">
                 <div className="ml-14 sm:ml-[4.5rem] space-y-3">
-                  {week.topics.map((topic, topicIndex) => (
+                  {week?.topics?.map((topic, topicIndex) => (
                     <motion.div
                       key={topicIndex}
                       initial={{ opacity: 0, x: -20 }}
@@ -62,7 +62,7 @@ export default function CourseCurriculum({ course }: CourseCurriculumProps) {
                         </div>
                       </div>
                       <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 break-words">
-                        {topic.topic}
+                        {topic}
                       </span>
                     </motion.div>
                   ))}
