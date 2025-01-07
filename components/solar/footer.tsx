@@ -21,7 +21,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900">
+    <footer className="">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="py-16">
           <div className="flex flex-col lg:flex-row justify-between gap-12">
