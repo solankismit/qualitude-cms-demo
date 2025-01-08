@@ -43,7 +43,7 @@ export function ContactForm() {
             viewport={{ once: true }}
             className="space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-evenly"
           >
-            <div className="w-full flex items-start space-x-4">
+            <div className="w-full flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Phone className="w-6 h-6 text-blue-500" />
               </div>
@@ -52,7 +52,7 @@ export function ContactForm() {
                 <Link href={`tel:${contact.phone}`} className="text-muted-foreground">{contact.phone}</Link>
               </div>
             </div>
-            <div className="w-full flex items-start space-x-4">
+            <div className="w-full flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Mail className="w-6 h-6 text-blue-500" />
               </div>
@@ -61,7 +61,7 @@ export function ContactForm() {
                 <Link href={`mailto:${contact.email}`} className="text-muted-foreground">{contact.email}</Link>
               </div>
             </div>
-            <div className="w-full flex items-start space-x-4">
+            <div className="w-full flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Globe className="w-6 h-6 text-blue-500" />
               </div>
