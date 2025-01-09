@@ -1,3 +1,2 @@
 ﻿# qualitude-technologies-demo
  
- 
