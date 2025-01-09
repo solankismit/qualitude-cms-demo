@@ -9,11 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="flex flex-col gap-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-            {/* <Image src="/logo.png" alt="Qualitude Logo" width={50} height={50} /> */}
+            <Image src="/favicon.png" alt="Qualitude Logo" width={30} height={30} />
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
               Qualitude IT Solution
             </span></Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground ml-[38px]">
               Empowering innovation through technology and sustainable solutions.
             </p>
           </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Phone, Mail, Globe, Facebook, Twitter, Instagram, Linkedin, MapPin } from "lucide-react";
 import { contact } from "@/app/solar/data";
+import Image from "next/image";
 
 export function Footer() {
   const navigation = {
@@ -26,14 +27,18 @@ export function Footer() {
         <div className="py-16">
           <div className="flex flex-col lg:flex-row justify-between gap-12">
             {/* Company Info */}
-            <div className="space-y-4 lg:max-w-sm">
+            <div className="space-y-3 lg:max-w-sm">
+                <div className="flex items-center gap-2">
+
+                <Image src="/favicon.png" alt="Qualitude Logo" width={25} height={25} />  
               <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
                 Qualitude Solar
               </h3>
-              <p className="text-sm text-muted-foreground">
+                </div>
+              <p className="text-sm text-muted-foreground ml-[33px]">
                 Your trusted partner in clean, sustainable energy solutions.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 ml-[33px] ">
                 {navigation.social.map((item) => {
                   const Icon = item.icon;
                   return (
