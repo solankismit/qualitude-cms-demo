@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { contact } from "@/app/solar/data";
+import Image from "next/image";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,6 +74,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
+          <Image src="/favicon.png" alt="Qualitude Solar" width={30} height={30} />
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
               Qualitude Solar
             </span>

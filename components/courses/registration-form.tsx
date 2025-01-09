@@ -23,8 +23,8 @@ export function RegistrationForm({ courseId, courseTitle }: RegistrationFormProp
   };
 
   return (
-    <section className="w-full px-0 md:px-0">
-      <div className="container max-w-2xl mx-auto text-left">
+    <section className="w-full px-0 md:px-0 ">
+      <div className=" mx-4 sm:mx-6 text-left">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -51,7 +51,7 @@ export default function CoursePage({ params }: { params: { courseId: string } })
               
               {/* Right Column - Registration Form */}
               <div className="xl:col-span-1">
-                <div className="sticky top-24 rounded-xl shadow-lg border ">
+                <div className="sticky top-24 rounded-xl  border-none">
                   <RegistrationForm courseId={course.id} courseTitle={course.title} />
                 </div>
               </div>

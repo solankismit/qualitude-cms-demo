@@ -10,7 +10,7 @@ export default function Page() {
         className="relative h-[50vh] md:h-screen md:w-1/2 group overflow-hidden border-b md:border-b-0 md:border-r border-white/10"
       >
         <Image
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1920&auto=format&fit=crop"
+          src="/images/solar-main.avif"
           alt="Solar panels field under blue sky"
           fill
           className="object-cover object-center transition-transform duration-700 ease-in-out md:group-hover:scale-110 brightness-75 md:brightness-90"
@@ -40,7 +40,7 @@ export default function Page() {
         className="relative h-[50vh] md:h-screen md:w-1/2 group overflow-hidden"
       >
         <Image
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop"
+          src="/images/tech-main.avif"
           alt="Circuit board close up"
           fill
           className="object-cover object-center transition-transform duration-700 ease-in-out md:group-hover:scale-110 brightness-75 md:brightness-90"
