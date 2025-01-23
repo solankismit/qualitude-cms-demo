@@ -1,1 +1,17 @@
-{}
+{
+  "title": "Abcd",
+  "description": "dhuihiuhuihuih",
+  "duration": "3 weeks",
+  "schedule": "1 hour per day",
+  "skills": [
+    "Bhbhbhb",
+    "HEllo"
+  ],
+  "highlights": [
+    {
+      "title": "Helooo",
+      "description": "hiuhuhuhuh",
+      "icon": "Target"
+    }
+  ]
+}
