@@ -4,6 +4,7 @@ export interface Course {
   description: string;
   duration: string;
   schedule: string;
+  category: string;
   skills: string[];
   curriculum: {
     week: number;
@@ -21,9 +22,11 @@ export const courses: Course[] = [
   {
     id: "web-development",
     title: "Web Development Internship",
-    description: "Master modern web development with React, Next.js, and Node.js",
+    description:
+      "Master modern web development with React, Next.js, and Node.js",
     duration: "12 weeks",
     schedule: "Monday to Friday, 4 hours per day",
+    category: "Development",
     skills: [
       "React.js",
       "Next.js",
@@ -47,12 +50,22 @@ export const courses: Course[] = [
       {
         week: 3,
         title: "Advanced React",
-        topics: ["Performance Optimization", "Error Boundaries", "Render Props", "Higher-Order Components"],
+        topics: [
+          "Performance Optimization",
+          "Error Boundaries",
+          "Render Props",
+          "Higher-Order Components",
+        ],
       },
       {
         week: 4,
         title: "Next.js Essentials",
-        topics: ["Server-Side Rendering", "Static Site Generation", "API Routes", "Dynamic Routing"],
+        topics: [
+          "Server-Side Rendering",
+          "Static Site Generation",
+          "API Routes",
+          "Dynamic Routing",
+        ],
       },
       {
         week: 5,
@@ -62,7 +75,12 @@ export const courses: Course[] = [
       {
         week: 6,
         title: "Node.js and Express",
-        topics: ["HTTP Basics", "RESTful API Design", "Middleware", "Error Handling"],
+        topics: [
+          "HTTP Basics",
+          "RESTful API Design",
+          "Middleware",
+          "Error Handling",
+        ],
       },
       {
         week: 7,
@@ -77,22 +95,42 @@ export const courses: Course[] = [
       {
         week: 9,
         title: "Testing and Deployment",
-        topics: ["Unit Testing", "Integration Testing", "CI/CD", "Docker Basics"],
+        topics: [
+          "Unit Testing",
+          "Integration Testing",
+          "CI/CD",
+          "Docker Basics",
+        ],
       },
       {
         week: 10,
         title: "Advanced Frontend Concepts",
-        topics: ["Web Accessibility", "Internationalization", "Progressive Web Apps", "Web Performance"],
+        topics: [
+          "Web Accessibility",
+          "Internationalization",
+          "Progressive Web Apps",
+          "Web Performance",
+        ],
       },
       {
         week: 11,
         title: "Real-time Applications",
-        topics: ["WebSockets", "Socket.io", "Real-time Databases", "Push Notifications"],
+        topics: [
+          "WebSockets",
+          "Socket.io",
+          "Real-time Databases",
+          "Push Notifications",
+        ],
       },
       {
         week: 12,
         title: "Final Project",
-        topics: ["Project Planning", "Agile Development", "Code Review", "Presentation Skills"],
+        topics: [
+          "Project Planning",
+          "Agile Development",
+          "Code Review",
+          "Presentation Skills",
+        ],
       },
     ],
     careers: [
@@ -113,6 +151,7 @@ export const courses: Course[] = [
     description: "Master mobile app development with React Native and Flutter",
     duration: "12 weeks",
     schedule: "Monday to Friday, 4 hours per day",
+    category: "Mobile",
     skills: [
       "React Native",
       "Flutter",
@@ -126,7 +165,12 @@ export const courses: Course[] = [
       {
         week: 1,
         title: "Mobile Development Fundamentals",
-        topics: ["React Native Basics", "Flutter Basics", "JavaScript ES6+", "Dart Basics"],
+        topics: [
+          "React Native Basics",
+          "Flutter Basics",
+          "JavaScript ES6+",
+          "Dart Basics",
+        ],
       },
       {
         week: 2,
@@ -141,17 +185,32 @@ export const courses: Course[] = [
       {
         week: 4,
         title: "Mobile UI/UX Design",
-        topics: ["Mobile Design Principles", "Prototyping", "User Testing", "Accessibility"],
+        topics: [
+          "Mobile Design Principles",
+          "Prototyping",
+          "User Testing",
+          "Accessibility",
+        ],
       },
       {
         week: 5,
         title: "State Management in Mobile Apps",
-        topics: ["Redux for React Native", "Provider for Flutter", "MobX", "Local Storage"],
+        topics: [
+          "Redux for React Native",
+          "Provider for Flutter",
+          "MobX",
+          "Local Storage",
+        ],
       },
       {
         week: 6,
         title: "Native Device Features",
-        topics: ["Camera Integration", "Geolocation", "Push Notifications", "Biometric Authentication"],
+        topics: [
+          "Camera Integration",
+          "Geolocation",
+          "Push Notifications",
+          "Biometric Authentication",
+        ],
       },
       {
         week: 7,
@@ -161,27 +220,52 @@ export const courses: Course[] = [
       {
         week: 8,
         title: "Offline Support and Data Sync",
-        topics: ["Local Database", "Caching Strategies", "Background Sync", "Conflict Resolution"],
+        topics: [
+          "Local Database",
+          "Caching Strategies",
+          "Background Sync",
+          "Conflict Resolution",
+        ],
       },
       {
         week: 9,
         title: "Testing and Debugging",
-        topics: ["Unit Testing", "Integration Testing", "Debugging Tools", "Performance Profiling"],
+        topics: [
+          "Unit Testing",
+          "Integration Testing",
+          "Debugging Tools",
+          "Performance Profiling",
+        ],
       },
       {
         week: 10,
         title: "App Store Deployment",
-        topics: ["iOS App Store", "Google Play Store", "App Signing", "Beta Testing"],
+        topics: [
+          "iOS App Store",
+          "Google Play Store",
+          "App Signing",
+          "Beta Testing",
+        ],
       },
       {
         week: 11,
         title: "Cross-Platform Development",
-        topics: ["Code Sharing Strategies", "Platform-Specific Code", "Native Modules", "Performance Optimization"],
+        topics: [
+          "Code Sharing Strategies",
+          "Platform-Specific Code",
+          "Native Modules",
+          "Performance Optimization",
+        ],
       },
       {
         week: 12,
         title: "Final Project",
-        topics: ["Project Planning", "Agile Development", "Code Review", "Presentation Skills"],
+        topics: [
+          "Project Planning",
+          "Agile Development",
+          "Code Review",
+          "Presentation Skills",
+        ],
       },
     ],
     careers: [
@@ -197,4 +281,3 @@ export const courses: Course[] = [
     heroImage: "/courses/mobile-dev-hero.jpg",
   },
 ];
-
