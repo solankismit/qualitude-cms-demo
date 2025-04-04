@@ -13,7 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CoursePage({ params }: { params: { courseId: string } }) {
+export default async function CoursePage(props: { params: Promise<{ courseId: string }> }) {
+  const params = await props.params;
   const course = courses.find((c) => c.id === params.courseId);
 
   if (!course) {

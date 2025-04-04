@@ -1,6 +1,6 @@
 // "use client";
 
-import { projects } from "../data";
+import { projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
 import { ProjectDetailHeader } from "@/components/projects/project-detail-header";
 import { ProjectContent } from "@/components/projects/project-content";
@@ -12,16 +12,17 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 export async function generateStaticParams() {
   return projects.map((project) => ({
     id: project.id,
   }));
 }
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage(props: ProjectPageProps) {
+  const params = await props.params;
   const project = projects.find((p) => p.id === params.id);
 
   if (!project) {
