@@ -10,6 +10,7 @@ export interface Project {
   tags: string[];
   features?: string[];
   gallery?: string[];
+  featured?: boolean;
   testimonial?: {
     quote: string;
     author: string;
@@ -39,6 +40,7 @@ export function transformTinaProject(tinaProject: any): Project {
       tinaProject.features?.map((feature: string) => feature || "") ||
       undefined,
     gallery: tinaProject.gallery || undefined,
+    featured: tinaProject.featured || false,
     testimonial: tinaProject.testimonial
       ? {
           quote: tinaProject.testimonial.quote || "",

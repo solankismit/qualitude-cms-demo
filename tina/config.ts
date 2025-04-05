@@ -216,6 +216,12 @@ export default defineConfig({
         },
         fields: [
           {
+            type: "boolean",
+            name: "featured",
+            label: "Featured on Homepage",
+            description: "Display this project on the homepage",
+          },
+          {
             type: "string",
             name: "title",
             label: "Title",

@@ -7,10 +7,49 @@ import { projects } from "@/lib/projects";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { client } from "@/tina/__generated__/client";
+import { transformTinaProject } from "@/lib/projects";
+import { useState, useEffect } from "react";
+import type { Project } from "@/lib/projects";
 
 export function ProjectsHomeSection() {
-  // Display only the first 3 projects on the home page
-  const featuredProjects = projects.slice(0, 3);
+  // Filter projects marked as featured instead of showing first 3
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const projectsResponse = await client.queries.projectConnection();
+        const tinaProjects =
+          projectsResponse.data.projectConnection.edges?.map(
+            (edge) => edge?.node
+          ) || [];
+
+        const transformedProjects = tinaProjects
+          .map((project) => transformTinaProject(project))
+          .filter((project) => project.featured);
+
+        // If no featured projects, fall back to first 3
+        setFeaturedProjects(
+          transformedProjects.length > 0
+            ? transformedProjects
+            : projects.slice(0, 3)
+        );
+      } catch (error) {
+        console.error("Error fetching featured projects:", error);
+        setFeaturedProjects(projects.slice(0, 3));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return <div className="py-8 text-center">Loading projects...</div>;
+  }
 
   return (
     <Section
