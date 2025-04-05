@@ -87,6 +87,13 @@ export default defineConfig({
           },
           {
             type: "string",
+            name: "category",
+            label: "Category",
+            // required: true,
+            options: ["Web Development", "Mobile Development", "Data Science", "AI/ML", "Cloud Computing", "Cybersecurity", "DevOps", "UI/UX Design", "Project Management", "Other"],
+          },
+          {
+            type: "string",
             name: "duration",
             label: "Duration",
             // required: true,

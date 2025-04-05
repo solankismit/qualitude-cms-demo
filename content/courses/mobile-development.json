@@ -9,9 +9,10 @@
       "description": "Build applications that run on multiple platforms"
     }
   ],
-  "heroImage": "/courses/mobile-dev-hero.jpg",
+  "heroImage": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180101/samples/cup-on-a-table.jpg",
   "title": "Mobile App Development Internship",
   "description": "Master mobile app development with React Native and Flutter",
+  "category": "Web Development",
   "duration": "Upto 12 weeks",
   "schedule": "Monday to Friday, 2 hours per day",
   "skills": [
