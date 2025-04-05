@@ -1,14 +1,23 @@
 {
+  "featured": true,
   "title": "Hello",
   "description": "knjknaa",
-  "fullDescription": ["aaa", "cscdcdcdc"],
+  "fullDescription": [
+    "aaa",
+    "cscdcdcdc"
+  ],
   "category": "Healthcare",
   "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample.jpg",
   "clientName": "ddsdsdsds",
-  "completionDate": "dsdsdsdsdsd",
-  "tags": ["csscsc", "abc"],
-  "featured": true,
-  "features": ["sdsddsd", "ssdsd"],
+  "completionDate": "2025-04-25T18:30:00.000Z",
+  "tags": [
+    "csscsc",
+    "abc"
+  ],
+  "features": [
+    "sdsddsd",
+    "ssdsd"
+  ],
   "gallery": [
     "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample.jpg",
     "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-4.jpg"

@@ -98,7 +98,7 @@ export function ProjectContent({
       )}
 
       {testimonial && (
-        <Section className="bg-gray-50 dark:bg-gray-900">
+        <Section className="bg-gray-50 dark:bg-gray-900 last:!mb-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
