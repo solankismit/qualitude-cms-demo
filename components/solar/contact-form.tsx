@@ -45,9 +45,9 @@ export function ContactForm({ solarPage }: SolarPageQuery) {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-evenly gap-4 flex-wrap"
+            className="space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-evenly gap-4"
           >
-            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
+            <div className="w-full flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Phone className="w-6 h-6 text-blue-500" />
               </div>
@@ -61,7 +61,7 @@ export function ContactForm({ solarPage }: SolarPageQuery) {
                 </Link>
               </div>
             </div>
-            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
+            <div className="w-full flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Mail className="w-6 h-6 text-blue-500" />
               </div>
@@ -75,7 +75,7 @@ export function ContactForm({ solarPage }: SolarPageQuery) {
                 </Link>
               </div>
             </div>
-            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
+            <div className="w-full flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Globe className="w-6 h-6 text-blue-500" />
               </div>
@@ -87,15 +87,6 @@ export function ContactForm({ solarPage }: SolarPageQuery) {
                 >
                   {contactData.website}
                 </Link>
-              </div>
-            </div>
-            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
-              <div className="p-3 rounded-lg bg-blue-500/10">
-                <MapPin className="w-6 h-6 text-blue-500" />
-              </div>
-              <div>
-                <h3 className="font-medium">Address</h3>
-                <p className="text-muted-foreground">{contactData.address}</p>
               </div>
             </div>
           </motion.div>
