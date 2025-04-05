@@ -56,7 +56,13 @@ export function ProjectDetailHeader({
               {completionDate && (
                 <div className="flex items-center text-white/80">
                   <Calendar className="h-4 w-4 mr-2" />
-                  <span>{completionDate}</span>
+                  <span>
+                    {new Date(completionDate).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </span>
                 </div>
               )}
             </div>

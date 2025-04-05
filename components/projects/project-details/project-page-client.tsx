@@ -94,7 +94,7 @@ export function ProjectPageClient({
         <Section
           title="Related Projects"
           description={`More of our work in ${project.category}`}
-          className="bg-gray-50 dark:bg-gray-900"
+          className="bg-gray-50 dark:bg-gray-900 !mb-0"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedProjects.map((relatedProject) => (

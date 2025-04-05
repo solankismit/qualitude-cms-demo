@@ -265,7 +265,7 @@ export default defineConfig({
             label: "Client Name",
           },
           {
-            type: "string",
+            type: "datetime",
             name: "completionDate",
             label: "Completion Date",
           },
