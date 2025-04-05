@@ -1,109 +1,105 @@
 // "use client";
 
-import { projects } from "@/lib/projects";
+import { projects, transformTinaProject } from "@/lib/projects";
 import { notFound } from "next/navigation";
-import { ProjectDetailHeader } from "@/components/projects/project-detail-header";
-import { ProjectContent } from "@/components/projects/project-content";
-import { Section } from "@/components/ui/section";
-import { motion } from "framer-motion";
-import { ProjectCard } from "@/components/projects/project-card";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import client from "@/tina/__generated__/client";
+import { ProjectPageClient } from "@/components/projects/project-details/project-page-client";
 
 interface ProjectPageProps {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 }
+
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }));
-}
-export default async function ProjectPage(props: ProjectPageProps) {
-  const params = await props.params;
-  const project = projects.find((p) => p.id === params.id);
+  try {
+    // For Tina CMS, we'll need to fetch all projects to generate static paths
+    // @ts-ignore
+    const res = await client.queries.projectConnection();
+    // @ts-ignore
+    const projectEdges = res.data.projectConnection.edges || [];
 
-  if (!project) {
-    notFound();
+    return projectEdges.map((edge: any) => ({
+      id: edge.node._sys.filename,
+    }));
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    // Fallback to static data
+    return projects.map((project) => ({
+      id: project.id,
+    }));
   }
+}
 
-  // Get projects in the same category (excluding the current one)
-  const relatedProjects = projects
-    .filter((p) => p.category === project.category && p.id !== project.id)
-    .slice(0, 3);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  try {
+    // Try to fetch the project from Tina CMS
+    // @ts-ignore
+    const projectResponse = await client.queries.project({
+      relativePath: `${params.id}.json`,
+    });
 
-  return (
-    <div className="relative">
-      {/* Back Button */}
-      <div className="absolute top-6 left-6 z-20">
-        <Link href="/projects">
-          <Button
-            variant="outline"
-            size="sm"
-            className="group bg-white/20 backdrop-blur-md border-white/20 hover:bg-white/30"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-            All Projects
-          </Button>
-        </Link>
-      </div>
+    if (!projectResponse.data.project) {
+      console.error("Project not found for:", params.id);
+      notFound();
+    }
 
-      {/* Project Header */}
-      <ProjectDetailHeader
-        title={project.title}
-        category={project.category}
-        image={project.image}
-        clientName={project.clientName}
-        completionDate={project.completionDate}
-        tags={project.tags}
+    // Get projects in the same category from Tina
+    // @ts-ignore
+    const allProjectsRes = await client.queries.projectConnection();
+    // @ts-ignore
+    const projectEdges = allProjectsRes.data.projectConnection.edges || [];
+
+    // Keep original nodes for related projects
+    const relatedProjects = projectEdges
+      .filter((edge: any) => {
+        const node = edge.node;
+        return (
+          node.category === projectResponse.data.project.category &&
+          node._sys.filename !== params.id
+        );
+      })
+      .map((edge: any) => transformTinaProject(edge.node))
+      .slice(0, 3);
+
+    return (
+      <ProjectPageClient
+        data={projectResponse.data}
+        query={projectResponse.query}
+        variables={projectResponse.variables}
+        relatedProjects={relatedProjects}
       />
+    );
+  } catch (error) {
+    console.error("Error fetching project data:", error);
 
-      {/* Project Content */}
-      <ProjectContent
-        description={project.fullDescription}
-        features={project.features}
-        gallery={project.gallery}
-        testimonial={project.testimonial}
+    // Fallback to static data if Tina fetch fails
+    const project = projects.find((p) => p.id === params.id);
+
+    if (!project) {
+      notFound();
+    }
+
+    // Get projects in the same category (excluding the current one)
+    const relatedProjects = projects
+      .filter((p) => p.category === project.category && p.id !== project.id)
+      .slice(0, 3);
+
+    // Create a mock Tina data structure with our static project
+    const mockData = {
+      project: {
+        ...project,
+        _sys: { filename: project.id },
+      },
+    };
+
+    return (
+      <ProjectPageClient
+        data={mockData}
+        query=""
+        variables={{ relativePath: `${params.id}.json` }}
+        relatedProjects={relatedProjects}
       />
-
-      {/* Related Projects */}
-      {relatedProjects.length > 0 && (
-        <Section
-          title="Related Projects"
-          description={`More of our work in ${project.category}`}
-          className="bg-gray-50 dark:bg-gray-900"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedProjects.map((relatedProject) => (
-              <ProjectCard
-                key={relatedProject.id}
-                id={relatedProject.id}
-                title={relatedProject.title}
-                description={relatedProject.description}
-                category={relatedProject.category}
-                image={relatedProject.image}
-                tags={relatedProject.tags.slice(0, 2)}
-              />
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center mt-12"
-          >
-            <Link href="/projects">
-              <Button variant="outline" className="group">
-                View All Projects
-                <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </motion.div>
-        </Section>
-      )}
-    </div>
-  );
+    );
+  }
 }

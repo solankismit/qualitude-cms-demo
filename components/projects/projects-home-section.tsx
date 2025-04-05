@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
-import { ProjectCard } from "@/components/projects/project-card";
+import { ProjectCard } from "@/components/projects/common/project-card";
 import { projects } from "@/lib/projects";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";

@@ -64,12 +64,12 @@ export function ProjectDetailHeader({
         </div>
       </div>
 
-      {tags.length > 0 && (
+      {tags && tags.length > 0 && (
         <div className="bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center flex-wrap gap-2">
               <Tag className="h-4 w-4 text-muted-foreground mr-2" />
-              {tags.map((tag) => (
+              {Array.from(new Set(tags)).map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1 text-sm rounded-full bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-200"

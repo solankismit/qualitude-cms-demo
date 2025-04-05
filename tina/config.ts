@@ -90,7 +90,18 @@ export default defineConfig({
             name: "category",
             label: "Category",
             // required: true,
-            options: ["Web Development", "Mobile Development", "Data Science", "AI/ML", "Cloud Computing", "Cybersecurity", "DevOps", "UI/UX Design", "Project Management", "Other"],
+            options: [
+              "Web Development",
+              "Mobile Development",
+              "Data Science",
+              "AI/ML",
+              "Cloud Computing",
+              "Cybersecurity",
+              "DevOps",
+              "UI/UX Design",
+              "Project Management",
+              "Other",
+            ],
           },
           {
             type: "string",
@@ -188,6 +199,110 @@ export default defineConfig({
                 //     label: "Topic",
                 //   },
                 // ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "project",
+        label: "Projects",
+        path: "content/projects",
+        format: "json",
+        ui: {
+          router: ({ document }) => {
+            return `/technologies/projects/${document._sys.filename}`;
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "string",
+            name: "fullDescription",
+            label: "Full Description",
+            list: true,
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: [
+              "IoT Solutions",
+              "Energy",
+              "Healthcare",
+              "Blockchain",
+              "Education",
+              "Fintech",
+              "Other",
+            ],
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Image",
+          },
+          {
+            type: "string",
+            name: "clientName",
+            label: "Client Name",
+          },
+          {
+            type: "string",
+            name: "completionDate",
+            label: "Completion Date",
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+          },
+          {
+            type: "string",
+            name: "features",
+            label: "Features",
+            list: true,
+          },
+          {
+            type: "image",
+            name: "gallery",
+            label: "Gallery Images",
+            list: true,
+          },
+          {
+            type: "object",
+            name: "testimonial",
+            label: "Testimonial",
+            fields: [
+              {
+                type: "string",
+                name: "quote",
+                label: "Quote",
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "author",
+                label: "Author",
+              },
+              {
+                type: "string",
+                name: "position",
+                label: "Position",
               },
             ],
           },

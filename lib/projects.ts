@@ -17,6 +17,38 @@ export interface Project {
   };
 }
 
+// We're ignoring the type import since it will be generated later
+// import type { Project as ProjectTinaType } from "@/tina/__generated__/types";
+
+export function transformTinaProject(tinaProject: any): Project {
+  if (!tinaProject) {
+    throw new Error("Project data is required");
+  }
+
+  return {
+    id: tinaProject._sys.filename || "",
+    title: tinaProject.title || "",
+    description: tinaProject.description || "",
+    fullDescription: tinaProject.fullDescription || "",
+    category: tinaProject.category || "",
+    image: tinaProject.image || "",
+    clientName: tinaProject.clientName || undefined,
+    completionDate: tinaProject.completionDate || undefined,
+    tags: tinaProject.tags?.map((tag: string) => tag || "") || [],
+    features:
+      tinaProject.features?.map((feature: string) => feature || "") ||
+      undefined,
+    gallery: tinaProject.gallery || undefined,
+    testimonial: tinaProject.testimonial
+      ? {
+          quote: tinaProject.testimonial.quote || "",
+          author: tinaProject.testimonial.author || "",
+          position: tinaProject.testimonial.position || "",
+        }
+      : undefined,
+  };
+}
+
 export const projects: Project[] = [
   {
     id: "smart-city-monitoring",
@@ -34,7 +66,7 @@ export const projects: Project[] = [
     tags: ["IoT", "Smart City", "Real-time Analytics", "Dashboard"],
     features: [
       "Real-time monitoring of urban infrastructure",
-      "Predictive maintenance alerts", 
+      "Predictive maintenance alerts",
       "Resource utilization tracking",
       "Interactive dashboard with customizable widgets",
       "Mobile application for field workers",

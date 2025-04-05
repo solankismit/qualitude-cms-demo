@@ -4,9 +4,6 @@ import { CoursePageClient } from "@/components/courses/course-page-client";
 
 export async function generateStaticParams() {
   const coursesResponse = await client.queries.courseConnection();
-  coursesResponse.data.courseConnection.edges?.map((c) => {
-    console.log(c?.node?._sys.filename);
-  });
   return (
     coursesResponse.data.courseConnection.edges?.map((course) => ({
       courseId: course?.node?._sys.filename,

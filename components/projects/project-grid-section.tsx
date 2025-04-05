@@ -2,11 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { ProjectCard } from "./project-card";
+import { ProjectCard } from "./common/project-card";
 import { Course } from "@/lib/courses";
+import { Project } from "@/lib/projects";
+
+type ItemType = Course | Project;
 
 interface ItemGridSectionProps {
-  items: Course[];
+  items: ItemType[];
   onResetFilter?: () => void;
   emptyMessage?: string;
   resetButtonText?: string;
@@ -32,8 +35,20 @@ export function ItemGridSection({
             title={item.title}
             description={item.description}
             category={item.category}
-            image={item.heroImage || ""}
-            tags={item.skills?.slice(0, 3) || []}
+            image={
+              "heroImage" in item
+                ? item.heroImage || ""
+                : "image" in item
+                ? item.image
+                : ""
+            }
+            tags={
+              "skills" in item
+                ? item.skills?.slice(0, 3) || []
+                : "tags" in item
+                ? item.tags?.slice(0, 3) || []
+                : []
+            }
             basePath={basePath}
             buttonText={itemButtonText}
           />

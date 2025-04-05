@@ -1,46 +1,23 @@
-"use client";
+import { transformTinaProject } from "@/lib/projects";
+import client from "@/tina/__generated__/client";
+import { ProjectsListPageClient } from "@/components/projects/projects-main/projects-list-page-client";
 
-import { useState } from "react";
-import { projects } from "@/lib/projects";
-import { ProjectHeroSection } from "@/components/projects/project-hero-section";
-import { ProjectFilterSection } from "@/components/projects/project-filter-section";
-import { ItemGridSection } from "@/components/projects/project-grid-section";
+export default async function ProjectsPage() {
+  // For TinaCMS, we can ignore type errors since the types will be generated later
+  // @ts-ignore
+  const res = await client.queries.projectConnection();
+  // @ts-ignore
+  const projectEdges = res.data.projectConnection.edges || [];
 
-export default function ProjectsPage() {
-  const [filter, setFilter] = useState<string | null>(null);
+  // Transform projects data to match the Project interface
+  const projects = projectEdges.map((edge: any) => {
+    return transformTinaProject(edge.node);
+  });
 
   // Get unique categories from projects
   const categories = Array.from(
-    new Set(projects.map((project) => project.category))
+    new Set(projects.map((project: any) => project.category)) as Set<string>
   );
 
-  // Filter projects based on selected category
-  const filteredProjects = filter
-    ? projects.filter((project) => project.category === filter)
-    : projects;
-
-  return (
-    <div className="relative">
-      <ProjectHeroSection
-        title="Our Projects"
-        description="Discover our innovative solutions and successful implementations across various industries"
-      />
-
-      <ProjectFilterSection
-        categories={categories}
-        activeFilter={filter}
-        onFilterChange={setFilter}
-        allLabel="All Projects"
-      />
-
-      <ItemGridSection
-        items={filteredProjects}
-        onResetFilter={() => setFilter(null)}
-        emptyMessage="No projects found for the selected category."
-        resetButtonText="View All Projects"
-        basePath="/technologies/projects"
-        itemButtonText="View Project"
-      />
-    </div>
-  );
+  return <ProjectsListPageClient projects={projects} categories={categories} />;
 }

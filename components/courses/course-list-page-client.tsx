@@ -1,8 +1,8 @@
 "use client";
 import { Course } from "@/lib/courses";
 import { useState } from "react";
-import { ProjectHeroSection } from "../projects/project-hero-section";
-import { ProjectFilterSection } from "../projects/project-filter-section";
+import { ProjectHeroSection } from "../projects/project-details/project-hero-section";
+import { ProjectFilterSection } from "../projects/project-details/project-filter-section";
 import { ItemGridSection } from "../projects/project-grid-section";
 
 const CourseListPageClient = ({

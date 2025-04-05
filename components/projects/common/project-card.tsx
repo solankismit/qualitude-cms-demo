@@ -38,15 +38,26 @@ export function ProjectCard({
     >
       <Link href={`${basePath}/${id}`} className="block h-full">
         <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300 border-gray-200 dark:border-gray-800 flex flex-col">
-          <div className="relative w-full h-48 overflow-hidden">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+          {image && (
+            <div className="relative w-full h-48 overflow-hidden">
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  // Hide the image container if it fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  // Also hide the parent container to prevent showing empty space
+                  if (target.parentElement) {
+                    target.parentElement.style.display = 'none';
+                  }
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          )}
           <div className="p-6 flex flex-col flex-grow">
             {category != "" && (
               <div className="mb-2">
