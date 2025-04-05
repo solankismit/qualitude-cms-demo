@@ -5,12 +5,16 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, Globe } from "lucide-react";
+import { Phone, Mail, Globe, MapPin } from "lucide-react";
 import { contact } from "@/app/solar/data";
 import Link from "next/link";
+import { SolarPageQuery } from "@/tina/__generated__/types";
 
-export function ContactForm() {
+export function ContactForm({ solarPage }: SolarPageQuery) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Fallback to static data if CMS data is not available
+  const contactData = solarPage?.contact || contact;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,33 +45,57 @@ export function ContactForm() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-evenly gap-4"
+            className="space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-evenly gap-4 flex-wrap"
           >
-            <div className="w-full flex items-start space-x-4 md:justify-center">
+            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Phone className="w-6 h-6 text-blue-500" />
               </div>
               <div>
                 <h3 className="font-medium">Phone</h3>
-                <Link href={`tel:${contact.phone}`} className="text-muted-foreground">{contact.phone}</Link>
+                <Link
+                  href={`tel:${contactData.phone}`}
+                  className="text-muted-foreground"
+                >
+                  {contactData.phone}
+                </Link>
               </div>
             </div>
-            <div className="w-full flex items-start space-x-4 md:justify-center">
+            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Mail className="w-6 h-6 text-blue-500" />
               </div>
               <div>
                 <h3 className="font-medium">Email</h3>
-                <Link href={`mailto:${contact.email}`} className="text-muted-foreground">{contact.email}</Link>
+                <Link
+                  href={`mailto:${contactData.email}`}
+                  className="text-muted-foreground"
+                >
+                  {contactData.email}
+                </Link>
               </div>
             </div>
-            <div className="w-full flex items-start space-x-4 md:justify-center">
+            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <Globe className="w-6 h-6 text-blue-500" />
               </div>
               <div>
                 <h3 className="font-medium">Website</h3>
-                <Link href={`https://${contact.website}`} className="text-muted-foreground">{contact.website}</Link>
+                <Link
+                  href={`https://${contactData.website}`}
+                  className="text-muted-foreground"
+                >
+                  {contactData.website}
+                </Link>
+              </div>
+            </div>
+            <div className="w-full md:w-auto flex items-start space-x-4 md:justify-center">
+              <div className="p-3 rounded-lg bg-blue-500/10">
+                <MapPin className="w-6 h-6 text-blue-500" />
+              </div>
+              <div>
+                <h3 className="font-medium">Address</h3>
+                <p className="text-muted-foreground">{contactData.address}</p>
               </div>
             </div>
           </motion.div>
@@ -117,4 +145,4 @@ export function ContactForm() {
       </div>
     </div>
   );
-} 
+}

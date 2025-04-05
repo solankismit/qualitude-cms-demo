@@ -2,8 +2,14 @@
 
 import { motion } from "framer-motion";
 import { features } from "@/app/solar/data";
+import { SolarPage, SolarPageQuery } from "@/tina/__generated__/types";
 
-export function FeaturesSection() {
+export function FeaturesSection({ solarPage }: SolarPageQuery) {
+  // Fallback to static data if CMS data is not available
+  const featuresData = solarPage?.features?.length
+    ? solarPage.features
+    : features;
+
   return (
     <div className="bg-white dark:bg-gray-950" id="features">
       <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
@@ -19,21 +25,26 @@ export function FeaturesSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 rounded-xl bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-900/50 border border-gray-200 dark:border-gray-800"
-            >
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </motion.div>
-          ))}
+          {featuresData.map(
+            (feature, index) =>
+              feature && (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-6 rounded-xl bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-900/50 border border-gray-200 dark:border-gray-800"
+                >
+                  <h3 className="text-lg font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </motion.div>
+              )
+          )}
         </div>
       </div>
     </div>
   );
-} 
+}
