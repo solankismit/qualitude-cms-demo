@@ -14,8 +14,10 @@
   "description": "Master modern web development with React, Next.js, and Node.js",
   "category": "Cybersecurity",
   "duration": "12 weeks",
-  "schedule": "Monday to Friday, 4 hours per day",
+  "schedule": "Monday to Friday, 2 hours per day",
   "skills": [
+    "PHP",
+    "Python",
     "React.js",
     "Next.js",
     "Node.js",
