@@ -1,20 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidatePath } from "next/cache";
 
 // Secret token for verification
-const REVALIDATE_TOKEN = process.env.REVALIDATE_TOKEN;
+// const REVALIDATE_TOKEN = process.env.REVALIDATE_TOKEN;
 
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     // Verify the request has the correct token
-    const token = request.headers.get("x-revalidate-token");
+    // const token = request.headers.get("x-revalidate-token");
 
     // Skip token validation in development environment
-    if (process.env.NODE_ENV !== "development") {
-      if (!REVALIDATE_TOKEN || token !== REVALIDATE_TOKEN) {
-        return NextResponse.json({ message: "Invalid token" }, { status: 401 });
-      }
-    }
+    // if (process.env.NODE_ENV !== "development") {
+    //   if (!REVALIDATE_TOKEN || token !== REVALIDATE_TOKEN) {
+    // return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+    //   }
+    // }
 
     // Force cache clearing by using the '/' path with the force option
     revalidatePath("/", "layout");
