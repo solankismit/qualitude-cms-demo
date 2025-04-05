@@ -17,13 +17,24 @@ export function HeroSection(props: HeroSectionProps) {
       {/* Background image from Cloudinary if available */}
       {heroData.image && (
         <div className="absolute inset-0 z-0">
-          <Image
-            src={heroData.image}
-            alt="Solar energy background"
-            fill
-            className="object-cover object-center brightness-[0.2]"
-            priority
-          />
+          {heroData.image.endsWith('.mp4') ? (
+            <video
+              src={heroData.image}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="object-cover object-center w-full h-full brightness-[0.2]"
+            />
+          ) : (
+            <Image
+              src={heroData.image}
+              alt="Solar energy background"
+              fill
+              className="object-cover object-center brightness-[0.2]"
+              priority
+            />
+          )}
         </div>
       )}
 

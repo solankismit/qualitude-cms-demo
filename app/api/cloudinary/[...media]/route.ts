@@ -3,6 +3,7 @@ import {
   createMediaHandler as createPagesMediaHandler,
 } from "next-tinacms-cloudinary/dist/handlers";
 import { NextRequest, NextResponse } from "next/server";
+import { Readable } from "stream";
 
 export const config = mediaHandlerConfig;
 
@@ -25,16 +26,29 @@ const pagesHandler = createPagesMediaHandler({
   },
 });
 
+// Helper function to convert NextRequest to a Node.js readable stream
+async function requestToStream(request: NextRequest): Promise<Readable> {
+  const arrayBuffer = await request.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  const stream = new Readable();
+  stream.push(buffer);
+  stream.push(null); // Signal the end of the stream
+  return stream;
+}
+
 // Adapter function to convert App Router requests to Pages Router format
 async function handleRequest(
   request: NextRequest,
   { params }: { params: { media: string[] } }
 ) {
-  return new Promise<NextResponse>((resolve) => {
+  return new Promise<NextResponse>(async (resolve) => {
     // Extract query parameters from the URL
     const url = new URL(request.url);
     const searchParams = url.searchParams;
     const directory = searchParams.get("directory") || "";
+
+    // Create a compatible request stream from the NextRequest body
+    const bodyStream = await requestToStream(request);
 
     // Create a compatible request object for the Pages Router handler
     const req: any = {
@@ -44,7 +58,16 @@ async function handleRequest(
         media: params.media,
         directory,
       },
-      body: request.body,
+      // Add Stream-like properties that multer expects
+      pipe: function (destination: any) {
+        return bodyStream.pipe(destination);
+      },
+      on: bodyStream.on.bind(bodyStream),
+      once: bodyStream.once.bind(bodyStream),
+      emit: bodyStream.emit.bind(bodyStream),
+      pause: bodyStream.pause.bind(bodyStream),
+      resume: bodyStream.resume.bind(bodyStream),
+      unpipe: bodyStream.unpipe?.bind(bodyStream) || (() => req),
     };
 
     // Create a compatible response object for the Pages Router handler
