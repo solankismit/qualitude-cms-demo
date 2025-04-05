@@ -1,32 +1,4 @@
 {
-  "title": "Web Development Internship",
-  "description": "Master modern web development with React, Next.js, and Node.js",
-  "duration": "12 weeks",
-  "schedule": "Monday to Friday, 4 hours per day",
-  "heroImage": "/courses/web-dev-hero.jpg",
-  "skills": [
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "REST APIs",
-    "Database Design"
-  ],
-  "curriculum": [
-    {
-      "title": "Web Fundamentals",
-      "topics": ["HTML5", "CSS3", "JavaScript ES6+", "Git Basics"]
-    },
-    {
-      "title": "React Fundamentals",
-      "topics": ["Components", "Props", "State", "Hooks", "Context"]
-    },
-    {
-      "title": "Advanced React",
-      "topics": ["Performance Optimization", "Error Boundaries", "Render Props", "Higher-Order Components"]
-    }
-  ],
   "careers": [
     {
       "title": "Frontend Developer",
@@ -36,6 +8,21 @@
       "title": "Full Stack Developer",
       "description": "Develop both client and server-side applications"
     }
+  ],
+  "heroImage": "/courses/web-dev-hero.jpg",
+  "title": "Web Development Internship",
+  "description": "Master modern web development with React, Next.js, and Node.js",
+  "category": "Cybersecurity",
+  "duration": "12 weeks",
+  "schedule": "Monday to Friday, 4 hours per day",
+  "skills": [
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "REST APIs",
+    "Database Design"
   ],
   "highlights": [
     {
@@ -58,5 +45,35 @@
       "description": "Earn a verified certificate upon completion",
       "icon": "Award"
     }
+  ],
+  "curriculum": [
+    {
+      "title": "Web Fundamentals",
+      "topics": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6+",
+        "Git Basics"
+      ]
+    },
+    {
+      "title": "React Fundamentals",
+      "topics": [
+        "Components",
+        "Props",
+        "State",
+        "Hooks",
+        "Context"
+      ]
+    },
+    {
+      "title": "Advanced React",
+      "topics": [
+        "Performance Optimization",
+        "Error Boundaries",
+        "Render Props",
+        "Higher-Order Components"
+      ]
+    }
   ]
-} 
+}

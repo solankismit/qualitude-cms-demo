@@ -1,0 +1,31 @@
+{
+  "title": "AI-Powered Medical Diagnostic Tool",
+  "description": "A machine learning platform that assists doctors in diagnosing diseases from medical imaging with high accuracy.",
+  "fullDescription": [
+    "Our AI-Powered Medical Diagnostic Tool uses advanced deep learning algorithms to analyze medical images and assist healthcare professionals in making accurate diagnoses.",
+    "The system is trained on millions of anonymized medical images and has been shown to match or exceed human expert performance in detecting certain conditions, serving as a valuable second opinion for healthcare providers."
+  ],
+  "category": "Healthcare",
+  "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-3.jpg",
+  "clientName": "MediTech Healthcare",
+  "completionDate": "April 2024",
+  "tags": ["Healthcare", "AI", "Machine Learning", "Diagnostics"],
+  "featured": true,
+  "features": [
+    "High-accuracy disease detection",
+    "Support for X-ray, MRI, and CT scans",
+    "HIPAA-compliant data handling",
+    "Explainable AI for transparent decision making",
+    "Integration with hospital PACS systems",
+    "Continuous learning from new data"
+  ],
+  "gallery": [
+    "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-3.jpg",
+    "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180101/cld-sample-4.jpg"
+  ],
+  "testimonial": {
+    "quote": "This diagnostic tool has revolutionized our radiology department. We've seen a 30% increase in early detection rates for certain conditions, potentially saving countless lives.",
+    "author": "Dr. Jennifer Lee",
+    "position": "Chief of Radiology, MediTech Healthcare"
+  }
+}

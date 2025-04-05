@@ -66,7 +66,7 @@ export function CoursePageClient({ data, query, variables }: CoursePageClientPro
               {/* Right Column - Registration Form */}
               <div className="xl:col-span-1">
                 {variables.relativePath.replace('.json', '') && course.title && (
-                  <div className="sticky top-24 rounded-xl shadow-lg border ">
+                  <div className="sticky top-24 rounded-xl shadow-lg border-none ">
                     <RegistrationForm 
                       courseId={variables.relativePath.replace('.json', '')} 
                       courseTitle={course.title} 
