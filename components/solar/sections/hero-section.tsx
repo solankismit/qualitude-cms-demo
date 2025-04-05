@@ -16,12 +16,12 @@ export function HeroSection(props: HeroSectionProps) {
     <div className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-blue-50/20 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900">
       {/* Background image from Cloudinary if available */}
       {heroData.image && (
-        <div className="absolute inset-0 -z-20">
+        <div className="absolute inset-0 z-0">
           <Image
             src={heroData.image}
             alt="Solar energy background"
             fill
-            className="object-cover object-center brightness-50"
+            className="object-cover object-center brightness-[0.2]"
             priority
           />
         </div>
