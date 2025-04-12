@@ -1,0 +1,31 @@
+{
+  "title": "Blockchain Voting System",
+  "description": "A secure and transparent voting platform built on blockchain technology to ensure election integrity.",
+  "fullDescription": [
+    "Our Blockchain Voting System leverages distributed ledger technology to create a tamper-proof, transparent, and auditable digital voting platform.",
+    "The solution addresses critical challenges in modern elections, including voter authentication, vote integrity, and result verification, while maintaining ballot secrecy and preventing manipulation."
+  ],
+  "category": "Blockchain",
+  "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180101/cld-sample-5.jpg",
+  "clientName": "National Electoral Commission",
+  "completionDate": "November 2023",
+  "tags": ["Blockchain", "Security", "Democracy", "Voting"],
+  "featured": false,
+  "features": [
+    "Biometric voter verification",
+    "Immutable vote recording",
+    "End-to-end encryption",
+    "Real-time tallying with privacy preservation",
+    "Public verifiability of results",
+    "Post-election auditing capabilities"
+  ],
+  "gallery": [
+    "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180101/cld-sample-5.jpg",
+    "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180101/cld-sample-6.jpg"
+  ],
+  "testimonial": {
+    "quote": "This blockchain voting system has transformed our electoral process. We've seen increased voter participation and confidence in the results, while significantly reducing disputes and challenges.",
+    "author": "Maria Gonzalez",
+    "position": "Director, National Electoral Commission"
+  }
+}
