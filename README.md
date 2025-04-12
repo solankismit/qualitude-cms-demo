@@ -1,2 +1,2 @@
-﻿# qualitude-technologies-demo
+﻿# Qualitude Solar & Technologies
  
