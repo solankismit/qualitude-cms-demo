@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -47,13 +47,13 @@ export function Section({
   return (
     <section
       className={cn(
-        'py-8 sm:py-12 mb-8 sm:mb-12 ',
-        fullWidth ? 'px-0' : 'px-4 sm:px-6',
-        'last:mb-0 last:pb-0',
+        "py-8 sm:py-12 mb-8 sm:mb-12 ",
+        fullWidth ? "px-0" : "px-4 sm:px-6",
+        // 'last:mb-0 last:pb-0',
         className
       )}
     >
       {fullWidth ? content : <div className="container mx-auto">{content}</div>}
     </section>
   );
-} 
+}

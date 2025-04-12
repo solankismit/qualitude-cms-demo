@@ -20,9 +20,9 @@ export default defineConfig({
     publicFolder: "public",
   },
   media: {
-  loadCustomStore: async () => {
+    loadCustomStore: async () => {
       const pack = await import("next-tinacms-cloudinary");
-    return pack.TinaCloudCloudinaryMediaStore;
+      return pack.TinaCloudCloudinaryMediaStore;
     },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
@@ -44,7 +44,7 @@ export default defineConfig({
             name: "careers",
             label: "Careers",
             list: true,
-            
+
             ui: {
               itemProps: (item) => ({
                 label: item.title,
@@ -56,7 +56,6 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
                 // required: true,
-                
               },
               {
                 type: "string",
@@ -66,7 +65,7 @@ export default defineConfig({
               },
             ],
           },
-            {
+          {
             type: "image",
             name: "heroImage",
             label: "Hero Image",
@@ -83,8 +82,26 @@ export default defineConfig({
             label: "Description",
             // required: true,
             ui: {
-              component: "textarea"
-            }
+              component: "textarea",
+            },
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            // required: true,
+            options: [
+              "Web Development",
+              "Mobile Development",
+              "Data Science",
+              "AI/ML",
+              "Cloud Computing",
+              "Cybersecurity",
+              "DevOps",
+              "UI/UX Design",
+              "Project Management",
+              "Other",
+            ],
           },
           {
             type: "string",
@@ -185,8 +202,116 @@ export default defineConfig({
               },
             ],
           },
-          
-          
+        ],
+      },
+      {
+        name: "project",
+        label: "Projects",
+        path: "content/projects",
+        format: "json",
+        ui: {
+          router: ({ document }) => {
+            return `/technologies/projects/${document._sys.filename}`;
+          },
+        },
+        fields: [
+          {
+            type: "boolean",
+            name: "featured",
+            label: "Featured on Homepage",
+            description: "Display this project on the homepage",
+          },
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "string",
+            name: "fullDescription",
+            label: "Full Description",
+            list: true,
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: [
+              "IoT Solutions",
+              "Energy",
+              "Healthcare",
+              "Blockchain",
+              "Education",
+              "Fintech",
+              "Other",
+            ],
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Image",
+          },
+          {
+            type: "string",
+            name: "clientName",
+            label: "Client Name",
+          },
+          {
+            type: "datetime",
+            name: "completionDate",
+            label: "Completion Date",
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+          },
+          {
+            type: "string",
+            name: "features",
+            label: "Features",
+            list: true,
+          },
+          {
+            type: "image",
+            name: "gallery",
+            label: "Gallery Images",
+            list: true,
+          },
+          {
+            type: "object",
+            name: "testimonial",
+            label: "Testimonial",
+            fields: [
+              {
+                type: "string",
+                name: "quote",
+                label: "Quote",
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "author",
+                label: "Author",
+              },
+              {
+                type: "string",
+                name: "position",
+                label: "Position",
+              },
+            ],
+          },
         ],
       },
       {
@@ -196,33 +321,224 @@ export default defineConfig({
         format: "json",
         ui: {
           router: ({ document }) => {
-            return '/';
-          }
+            return "/";
+          },
         },
         fields: [
           {
             name: "title_1",
             label: "Title 1",
-            type: "string"
+            type: "string",
           },
           {
             name: "description_1",
             label: "Description 1",
-            type: "string"
+            type: "string",
           },
           {
             name: "title_2",
             label: "Title 2",
-            type: "string"
+            type: "string",
           },
           {
             name: "description_2",
             label: "Description 2",
-            type: "string"
+            type: "string",
           },
-        ]
+        ],
+      },
+      {
+        name: "solarPage",
+        label: "Solar Page",
+        path: "content/solar",
+        format: "json",
+        ui: {
+          router: ({ document }) => {
+            return "/solar";
+          },
+        },
+        fields: [
+          {
+            name: "hero",
+            label: "Hero Section",
+            type: "object",
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "subtitle",
+                label: "Subtitle",
+                type: "string",
+              },
+              {
+                name: "description",
+                label: "Description",
+                type: "string",
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                name: "image",
+                label: "Background Image",
+                type: "image",
+              },
+            ],
+          },
+          {
+            name: "benefits",
+            label: "Benefits Section",
+            type: "object",
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item.title,
+              }),
+            },
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "description",
+                label: "Description",
+                type: "string",
+              },
+            ],
+          },
+          {
+            name: "services",
+            label: "Services Section",
+            type: "object",
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item.title,
+              }),
+            },
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "description",
+                label: "Description",
+                type: "string",
+              },
+              {
+                name: "icon",
+                label: "Icon",
+                type: "string",
+                options: ["Home", "Building2", "Battery", "Wrench"],
+              },
+            ],
+          },
+          {
+            name: "features",
+            label: "Features Section",
+            type: "object",
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item.title,
+              }),
+            },
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "description",
+                label: "Description",
+                type: "string",
+              },
+            ],
+          },
+          {
+            name: "process",
+            label: "Process Section",
+            type: "object",
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item.title,
+              }),
+            },
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "description",
+                label: "Description",
+                type: "string",
+              },
+            ],
+          },
+          {
+            name: "gallery",
+            label: "Gallery",
+            type: "object",
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item.title,
+              }),
+            },
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "images",
+                label: "Images",
+                type: "image",
+                list: true,
+              },
+            ],
+          },
+          {
+            name: "contact",
+            label: "Contact Information",
+            type: "object",
+            fields: [
+              {
+                name: "phone",
+                label: "Phone",
+                type: "string",
+              },
+              {
+                name: "email",
+                label: "Email",
+                type: "string",
+              },
+              {
+                name: "website",
+                label: "Website",
+                type: "string",
+              },
+              {
+                name: "address",
+                label: "Address",
+                type: "string",
+              },
+            ],
+          },
+        ],
       },
     ],
   },
 });
-

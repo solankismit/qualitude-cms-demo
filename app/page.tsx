@@ -8,4 +8,3 @@ export default async function Page() {
   const variables = res.variables
   return <HomePage data={data} query={query} variables={variables} />
 }
-

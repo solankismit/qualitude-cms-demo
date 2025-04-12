@@ -3,33 +3,46 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Code, Smartphone, Brain, Zap, Users, Target, CheckCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Code,
+  Smartphone,
+  Brain,
+  Zap,
+  Users,
+  Target,
+  CheckCircle,
+} from "lucide-react";
 import Link from "next/link";
 import { ServiceCard } from "@/components/services/service-card";
 import { InquiryForm } from "@/components/inquiry-form";
 import { Section } from "@/components/ui/section";
+import { ProjectsHomeSection } from "@/components/projects/projects-home-section";
 
 const features = [
   {
     icon: Target,
     title: "Industry-Focused",
-    description: "Programs designed with real-world applications and current market demands in mind"
+    description:
+      "Programs designed with real-world applications and current market demands in mind",
   },
   {
     icon: Users,
     title: "Expert Mentorship",
-    description: "Learn from experienced professionals who are active in the industry"
+    description:
+      "Learn from experienced professionals who are active in the industry",
   },
   {
     icon: Zap,
     title: "Hands-on Experience",
-    description: "Work on real projects and build a professional portfolio"
+    description: "Work on real projects and build a professional portfolio",
   },
   {
     icon: CheckCircle,
     title: "Career Support",
-    description: "Get guidance on job placement and career advancement opportunities"
-  }
+    description:
+      "Get guidance on job placement and career advancement opportunities",
+  },
 ];
 
 export default function TechnologiesPage() {
@@ -40,7 +53,7 @@ export default function TechnologiesPage() {
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
           <div className="absolute inset-0 bg-background/90 dark:bg-gray-950/90" />
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -56,29 +69,27 @@ export default function TechnologiesPage() {
               Empowering Ideas with Technology
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Transform your vision into reality with our cutting-edge technology solutions
-              and comprehensive learning programs.
+              Transform your vision into reality with our cutting-edge
+              technology solutions and comprehensive learning programs.
             </p>
           </motion.div>
-               {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20,x: "-50%" }}
-          animate={{ opacity: 1, y: 0 ,x: "-50%"}}
-          transition={{ delay: 0.8 }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center text-muted-foreground">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-8 bg-gradient-to-b from-muted-foreground to-transparent rounded-full mb-2"
-            />
-            <span className="text-sm">Scroll to explore</span>
-          </div>
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 20, x: "-50%" }}
+            animate={{ opacity: 1, y: 0, x: "-50%" }}
+            transition={{ delay: 0.8 }}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2"
+          >
+            <div className="flex flex-col items-center text-muted-foreground">
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-1 h-8 bg-gradient-to-b from-muted-foreground to-transparent rounded-full mb-2"
+              />
+              <span className="text-sm">Scroll to explore</span>
+            </div>
+          </motion.div>
         </motion.div>
-        </motion.div>
-
-   
       </div>
 
       {/* Features Section */}
@@ -97,7 +108,9 @@ export default function TechnologiesPage() {
                 <div className="mb-4 p-3 rounded-lg bg-blue-500/10 w-fit group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-6 h-6 text-blue-500" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-500 transition-colors">{feature.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-500 transition-colors">
+                  {feature.title}
+                </h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
             ))}
@@ -119,8 +132,8 @@ export default function TechnologiesPage() {
               Our Services
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Discover our comprehensive range of technology services designed to meet
-              your digital transformation needs.
+              Discover our comprehensive range of technology services designed
+              to meet your digital transformation needs.
             </p>
           </motion.div>
 
@@ -158,7 +171,7 @@ export default function TechnologiesPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
-              Internship Programs
+              Our Courses
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Launch your career with our industry-focused training programs and
@@ -167,17 +180,22 @@ export default function TechnologiesPage() {
           </motion.div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <Link href="/technologies/courses/web-development" className="block group">
+            <Link
+              href="/technologies/courses/web-development"
+              className="block group"
+            >
               <Card className="p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-gray-200 dark:border-gray-800 h-full  hover:border-blue-500/50 dark:hover:border-blue-400/50">
                 <div className="flex flex-col h-full">
                   <div className="mb-4 p-3 rounded-lg bg-blue-500/10 w-fit group-hover:scale-110 transition-transform duration-300">
                     <Code className="w-6 h-6 text-blue-500" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-500 transition-colors">
-                    Web Development Internship
+                    Web Development Course
                   </h3>
                   <p className="text-muted-foreground mb-6 flex-grow">
-                    Learn modern web development with React, Next.js, and Node.js. Build real-world projects and gain practical experience.
+                    Learn modern web development with React, Next.js, and
+                    Node.js. Build real-world projects and gain practical
+                    experience.
                   </p>
                   <Button variant="ghost" className="group/btn w-fit">
                     Learn More
@@ -186,7 +204,10 @@ export default function TechnologiesPage() {
                 </div>
               </Card>
             </Link>
-            <Link href="/technologies/courses/mobile-development" className="block group">
+            <Link
+              href="/technologies/courses/mobile-development"
+              className="block group"
+            >
               <Card className="p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-gray-200 dark:border-gray-800 h-full  hover:border-blue-500/50 dark:hover:border-blue-400/50">
                 <div className="flex flex-col h-full">
                   <div className="mb-4 p-3 rounded-lg bg-blue-500/10 w-fit group-hover:scale-110 transition-transform duration-300">
@@ -196,7 +217,9 @@ export default function TechnologiesPage() {
                     Mobile App Development
                   </h3>
                   <p className="text-muted-foreground mb-6 flex-grow">
-                    Master mobile app development with React Native and Flutter. Create cross-platform applications for iOS and Android.
+                    Master mobile app development using React Native and
+                    Flutter. Create cross-platform applications for iOS and
+                    Android.
                   </p>
                   <Button variant="ghost" className="group/btn w-fit">
                     Learn More
@@ -206,9 +229,25 @@ export default function TechnologiesPage() {
               </Card>
             </Link>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-12"
+          >
+            <Link href="/technologies/courses">
+              <Button className="group">
+                View All Courses
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </div>
 
+      {/* Featured Projects Section */}
+      <ProjectsHomeSection />
       {/* Inquiry Form */}
       {/* <div className="bg-gray-50 dark:bg-gray-900">
         <div className="">
