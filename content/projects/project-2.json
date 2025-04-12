@@ -1,5 +1,6 @@
 {
-  "title": "Smart Agriculture IoT System",
+  "featured": true,
+  "title": "Smart Lighting System",
   "description": "An IoT solution for modern farming that optimizes crop yield while reducing water and resource usage.",
   "fullDescription": [
     "Our Smart Agriculture IoT System combines sensors, data analytics, and automation to revolutionize farming practices.",
@@ -8,9 +9,12 @@
   "category": "IoT Solutions",
   "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-2.jpg",
   "clientName": "GreenGrow Farms",
-  "completionDate": "June 2023",
-  "tags": ["Agriculture", "IoT", "Sustainability"],
-  "featured": true,
+  "completionDate": "2023-06-01T00:00:00.000Z",
+  "tags": [
+    "Agriculture",
+    "IoT",
+    "Sustainability"
+  ],
   "features": [
     "Real-time soil moisture monitoring",
     "Automated irrigation control",
