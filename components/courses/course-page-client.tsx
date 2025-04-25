@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { CourseHero } from "@/components/courses/course-hero";
 import { CourseFeatures } from "@/components/courses/course-features";
@@ -15,7 +15,11 @@ interface CoursePageClientProps {
   variables: { relativePath: string };
 }
 
-export function CoursePageClient({ data, query, variables }: CoursePageClientProps) {
+export function CoursePageClient({
+  data,
+  query,
+  variables,
+}: CoursePageClientProps) {
   const { data: tinaData } = useTina({
     query,
     variables,
@@ -29,19 +33,19 @@ export function CoursePageClient({ data, query, variables }: CoursePageClientPro
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      {course.title   && (
-        <CourseHero 
-          title={course.title} 
+      {course.title && (
+        <CourseHero
+          title={course.title}
           description={course?.description}
           image={course?.heroImage}
         />
       )}
-      
+
       {/* Content Wrapper */}
       <div className="relative bg-gradient-to-b from-background via-background to-gray-50 dark:to-gray-900/50">
         {/* Curved Separator */}
         <div className="absolute inset-x-0 -top-20 h-20 bg-gradient-to-b from-transparent to-background" />
-        
+
         {/* Main Content */}
         <div className="container mx-auto px-4 sm:px-6">
           <div className="py-8 sm:py-12">
@@ -52,35 +56,33 @@ export function CoursePageClient({ data, query, variables }: CoursePageClientPro
                   <CourseFeatures
                     duration={course?.duration}
                     schedule={course?.schedule}
-                    skills={course.skills?.map(s => s)}
+                    skills={course.skills?.map((s) => s)}
                   />
                 )}
-                {course.highlights && (
-                  <CourseHighlights course={course} />
-                )}
-                {course.curriculum && (
-                  <CourseCurriculum course={course} />
-                )}
+                {course.highlights && <CourseHighlights course={course} />}
+                {course.curriculum && <CourseCurriculum course={course} />}
               </div>
-              
+
               {/* Right Column - Registration Form */}
               <div className="xl:col-span-1">
-                {variables.relativePath.replace('.json', '') && course.title && (
-                  <div className="sticky top-24 rounded-xl shadow-lg border-none ">
-                    <RegistrationForm 
-                      courseId={variables.relativePath.replace('.json', '')} 
-                      courseTitle={course.title} 
-                    />
-                  </div>
-                )}
+                {variables.relativePath.replace(".json", "") &&
+                  course.title && (
+                    <div className="sticky top-24 rounded-xl shadow-lg border-none ">
+                      <RegistrationForm
+                        courseId={variables.relativePath.replace(".json", "")}
+                        courseTitle={course.title}
+                        registrationLink={course.registrationLink}
+                      />
+                    </div>
+                  )}
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       {/* Testimonials Section */}
       {/* <CourseTestimonials courseId={variables.relativePath.replace('.json', '')} /> */}
     </div>
   );
-} 
+}

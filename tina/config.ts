@@ -202,6 +202,13 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: "string",
+            name: "registrationLink",
+            label: "Registration Link",
+            description: "URL for registration",
+            // required: true,
+          },
         ],
       },
       {

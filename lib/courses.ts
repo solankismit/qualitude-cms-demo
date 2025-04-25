@@ -22,6 +22,7 @@ export interface Course {
     icon: "Target" | "Users" | "Zap" | "Award";
   }[];
   heroImage?: string;
+  registrationLink?: string;
 }
 
 export function transformTinaCourse(tinaCourse: CourseTinaType): Course {
@@ -54,6 +55,7 @@ export function transformTinaCourse(tinaCourse: CourseTinaType): Course {
         description: h?.description || "",
         icon: (h?.icon as "Target" | "Users" | "Zap" | "Award") || "Target",
       })) || [],
+    registrationLink: tinaCourse.registrationLink || undefined,
   };
 }
 
