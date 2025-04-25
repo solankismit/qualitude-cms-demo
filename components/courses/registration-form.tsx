@@ -6,13 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 interface RegistrationFormProps {
   courseId: string;
   courseTitle: string;
+  registrationLink?: string;
 }
 
-export function RegistrationForm({ courseId, courseTitle }: RegistrationFormProps) {
+export function RegistrationForm({
+  courseId,
+  courseTitle,
+  registrationLink,
+}: RegistrationFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,18 +71,16 @@ export function RegistrationForm({ courseId, courseTitle }: RegistrationFormProp
                   className="h-12 text-lg"
                 />
               </div> */}
-              <Button 
-              
-                onClick={() => {
-                  window.open("https://docs.google.com/forms/d/e/1FAIpQLScRJtnLRuqM2YPjMFJOjOzfBvBh_EQb3K2ILY1FotsX0urMKw/viewform", "_blank");
-                }}
-                type="button"
-                size="lg"
-                className="w-full text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500" 
-                disabled={isSubmitting}
+              <Link
+                href={
+                  registrationLink ||
+                  "https://docs.google.com/forms/d/e/1FAIpQLScRJtnLRuqM2YPjMFJOjOzfBvBh_EQb3K2ILY1FotsX0urMKw/viewform"
+                }
+                target="_blank"
+                className="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 py-2 w-full text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 h-11 rounded-md px-8 bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 {isSubmitting ? "Submitting..." : "Register Now"}
-              </Button>
+              </Link>
             </form>
           </Card>
         </motion.div>
