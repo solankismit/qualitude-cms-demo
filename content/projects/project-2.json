@@ -11,16 +11,25 @@
   "clientName": "OM Engineering College",
   "completionDate": "2023-02-28T18:30:00.000Z",
   "tags": [
-    "Agriculture",
-    "IoT",
-    "Sustainability"
+    "National Level Event",
+    "Engineering Innovation",
+    "Student Competition",
+    "Skill Development",
+    "College Event",
+    "Education & Technology",
+    "Smart Solutions"
   ],
   "features": [
-    "Real-time soil moisture monitoring",
-    "Automated irrigation control",
-    "Weather integration and forecasting",
-    "Crop health analysis using computer vision",
-    "Mobile app for remote monitoring and control"
+    "Online Event Registration System",
+    "Department-wise Event Listing",
+    "Responsive Design",
+    "Modern & Animated UI",
+    "Countdown Timer",
+    "Event Details & Rules Display",
+    "Contact Information for Coordinators",
+    "Dynamic Routing to Event Pages",
+    "Security & Data Management",
+    "Event Highlight Banners"
   ],
   "testimonial": {
     "quote": "This IoT system has transformed our farming operations. We've reduced water usage by 40% while increasing our yield by 25%. The ROI has been remarkable.",
