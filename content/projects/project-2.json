@@ -31,6 +31,14 @@
     "Security & Data Management",
     "Event Highlight Banners"
   ],
+  "gallery": [
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921464/wmzvvenhgynuflpfyrzg.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921924/i2ejoicirsrfmkr21muf.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921992/lig5f31wtjhrz1jexlis.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745922004/ofwpklfp7jss55qwofch.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745922020/cvmgbt7sh5yqtxfldauk.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745922494/pufgobq4kltrcq8yuqxn.png"
+  ],
   "testimonial": {
     "quote": "This IoT system has transformed our farming operations. We've reduced water usage by 40% while increasing our yield by 25%. The ROI has been remarkable.",
     "author": "Michael Thompson",
