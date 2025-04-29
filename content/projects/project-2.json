@@ -6,7 +6,7 @@
     "The IGNIZOM website is the official digital platform for a national-level technical festival organized by OM Engineering College. It serves as a one-stop portal for showcasing the fest’s highlights, facilitating online event registrations, and sharing important updates with students and participants. The homepage features a modern and engaging design with animations, a countdown timer, and quick access to department-wise event categories. Each department offers a range of technical competitions such as coding, robotics, civil model design, and more, allowing students to explore and register for their preferred activities through a user-friendly interface.",
     "The site includes detailed sections such as About IGNIZOM, event-specific descriptions, online registration forms, and contact information for event coordinators. Designed with responsiveness and interactivity in mind, the website ensures a seamless experience across devices. It likely uses technologies such as HTML5, CSS3, JavaScript, and PHP or Laravel for backend functionality. The IGNIZOM platform not only promotes student innovation and collaboration but also highlights the institution’s commitment to academic excellence and technological advancement."
   ],
-  "category": "Other",
+  "category": "Education",
   "image": "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921464/wmzvvenhgynuflpfyrzg.png",
   "clientName": "OM Engineering College",
   "completionDate": "2023-02-28T18:30:00.000Z",
