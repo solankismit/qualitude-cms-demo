@@ -1,0 +1,47 @@
+{
+  "featured": true,
+  "title": "iGNIZOM",
+  "description": "The website is designed to promote, register, and inform participants about IGNIZOM, a national-level technical festival. It serves as the central hub for event information, department-wise competitions, important dates, and online registration for participants from various institutions.",
+  "fullDescription": [
+    "The IGNIZOM website is the official digital platform for a national-level technical festival organized by OM Engineering College. It serves as a one-stop portal for showcasing the fest’s highlights, facilitating online event registrations, and sharing important updates with students and participants. The homepage features a modern and engaging design with animations, a countdown timer, and quick access to department-wise event categories. Each department offers a range of technical competitions such as coding, robotics, civil model design, and more, allowing students to explore and register for their preferred activities through a user-friendly interface.",
+    "The site includes detailed sections such as About IGNIZOM, event-specific descriptions, online registration forms, and contact information for event coordinators. Designed with responsiveness and interactivity in mind, the website ensures a seamless experience across devices. It likely uses technologies such as HTML5, CSS3, JavaScript, and PHP or Laravel for backend functionality. The IGNIZOM platform not only promotes student innovation and collaboration but also highlights the institution’s commitment to academic excellence and technological advancement."
+  ],
+  "category": "Education",
+  "image": "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921464/wmzvvenhgynuflpfyrzg.png",
+  "clientName": "OM Engineering College",
+  "completionDate": "2023-02-28T18:30:00.000Z",
+  "tags": [
+    "National Level Event",
+    "Engineering Innovation",
+    "Student Competition",
+    "Skill Development",
+    "College Event",
+    "Education & Technology",
+    "Smart Solutions"
+  ],
+  "features": [
+    "Online Event Registration System",
+    "Department-wise Event Listing",
+    "Responsive Design",
+    "Modern & Animated UI",
+    "Countdown Timer",
+    "Event Details & Rules Display",
+    "Contact Information for Coordinators",
+    "Dynamic Routing to Event Pages",
+    "Security & Data Management",
+    "Event Highlight Banners"
+  ],
+  "gallery": [
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921464/wmzvvenhgynuflpfyrzg.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921924/i2ejoicirsrfmkr21muf.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745921992/lig5f31wtjhrz1jexlis.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745922004/ofwpklfp7jss55qwofch.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745922020/cvmgbt7sh5yqtxfldauk.png",
+    "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745922494/pufgobq4kltrcq8yuqxn.png"
+  ],
+  "testimonial": {
+    "quote": "This IoT system has transformed our farming operations. We've reduced water usage by 40% while increasing our yield by 25%. The ROI has been remarkable.",
+    "author": "Michael Thompson",
+    "position": "Director, GreenGrow Farms"
+  }
+}
