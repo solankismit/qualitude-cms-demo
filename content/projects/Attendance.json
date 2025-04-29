@@ -1,32 +1,35 @@
 {
-  "title": "AI-Powered Medical Diagnostic Tool",
-  "description": "A machine learning platform that assists doctors in diagnosing diseases from medical imaging with high accuracy.",
+  "featured": true,
+  "title": "Attendance Management System",
+  "description": "This web portal is developed for OM Engineering College to digitally manage student attendance across various departments. It simplifies and streamlines the process for faculty to mark, track, and analyze student attendance while giving students and administrators real-time visibility and reporting.",
   "fullDescription": [
-    "Our AI-Powered Medical Diagnostic Tool uses advanced deep learning algorithms to analyze medical images and assist healthcare professionals in making accurate diagnoses.",
-    "The system is trained on millions of anonymized medical images and has been shown to match or exceed human expert performance in detecting certain conditions, serving as a valuable second opinion for healthcare providers."
+    "The OM Education Attendance Management System is a centralized digital platform designed to automate and manage the daily attendance activities of students and faculty. Developed to enhance operational efficiency and reduce manual errors, the system allows faculty members to log in, record attendance, view reports, and monitor student participation across all departments. It ensures transparency by offering real-time access to attendance data for both academic staff and administrative teams.",
+    "With a secure login system and department-wise segregation, the platform provides role-based access to faculty and admins. Key features include date-wise attendance entry, analytics dashboards, monthly reports, student-wise filtering, and downloadable summaries. The portal is mobile-friendly, ensuring accessibility anytime, anywhere. It supports a disciplined academic environment while encouraging student accountability and improved institutional record-keeping."
   ],
-  "category": "Healthcare",
+  "category": "Education",
   "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-3.jpg",
   "clientName": "MediTech Healthcare",
-  "completionDate": "April 2024",
+  "completionDate": "2024-04-01T00:00:00.000Z",
   "tags": [
-    "Healthcare",
-    "AI",
-    "Machine Learning",
-    "Diagnostics"
+    "Attendance Management",
+    "Real-time Attendance",
+    "Web-based Attendance System",
+    "Academic Record Keeping",
+    "Attendance Analytics"
   ],
-  "featured": true,
   "features": [
-    "High-accuracy disease detection",
-    "Support for X-ray, MRI, and CT scans",
-    "HIPAA-compliant data handling",
-    "Explainable AI for transparent decision making",
-    "Integration with hospital PACS systems",
-    "Continuous learning from new data"
-  ],
-  "gallery": [
-    "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-3.jpg",
-    "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180101/cld-sample-4.jpg"
+    "Secure Login Panel",
+    "Attendance Entry Module",
+    "Date-wise and Month-wise Reports",
+    "Student-Wise Filtering",
+    "Attendance History",
+    "Department Segregation",
+    "Real-Time Sync",
+    "Mobile-Friendly Interface",
+    "Data Security",
+    "PDF/Excel Export",
+    "Admin Dashboard",
+    "Timetable-Based Filtering"
   ],
   "testimonial": {
     "quote": "This diagnostic tool has revolutionized our radiology department. We've seen a 30% increase in early detection rates for certain conditions, potentially saving countless lives.",
