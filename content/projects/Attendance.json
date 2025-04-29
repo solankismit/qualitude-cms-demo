@@ -7,9 +7,9 @@
     "With a secure login system and department-wise segregation, the platform provides role-based access to faculty and admins. Key features include date-wise attendance entry, analytics dashboards, monthly reports, student-wise filtering, and downloadable summaries. The portal is mobile-friendly, ensuring accessibility anytime, anywhere. It supports a disciplined academic environment while encouraging student accountability and improved institutional record-keeping."
   ],
   "category": "Education",
-  "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-3.jpg",
-  "clientName": "MediTech Healthcare",
-  "completionDate": "2024-04-01T00:00:00.000Z",
+  "image": "https://res.cloudinary.com/dt3aalm7c/image/upload/v1745923400/pkc9ljwrpnms646rzx38.png",
+  "clientName": "OM Engineering College",
+  "completionDate": "2024-01-31T18:30:00.000Z",
   "tags": [
     "Attendance Management",
     "Real-time Attendance",
@@ -30,6 +30,25 @@
     "PDF/Excel Export",
     "Admin Dashboard",
     "Timetable-Based Filtering"
+  ],
+  "gallery": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
   ],
   "testimonial": {
     "quote": "This diagnostic tool has revolutionized our radiology department. We've seen a 30% increase in early detection rates for certain conditions, potentially saving countless lives.",
