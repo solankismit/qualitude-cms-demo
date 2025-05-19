@@ -354,6 +354,58 @@ export default defineConfig({
           },
         ],
       },
+
+      {
+        name: "technologiesPage",
+        label: "Technologies Page",
+        path: "content/technologies",
+        format: "json",
+        ui: {
+          router: ({ document }) => {
+            return "/technologies";
+          },
+        },
+        fields: [
+          {
+            name: "adSection",
+            label: "Advertisement Section",
+            type: "object",
+            fields: [
+              {
+                name: "enabled",
+                label: "Enable Section",
+                type: "boolean",
+                description: "Toggle to show/hide the advertisement section",
+              },
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "autoplay",
+                label: "Enable Autoplay",
+                type: "boolean",
+                description: "Automatically advance slides",
+              },
+              {
+                name: "autoplayDuration",
+                label: "Autoplay Duration (ms)",
+                type: "number",
+                description:
+                  "Time between slides in milliseconds (e.g. 5000 for 5 seconds)",
+              },
+              {
+                name: "images",
+                label: "Advertisement Images",
+                type: "image",
+                list: true,
+                description: "Upload advertisement images",
+              },
+            ],
+          },
+        ],
+      },
       {
         name: "solarPage",
         label: "Solar Page",
@@ -392,6 +444,44 @@ export default defineConfig({
                 name: "image",
                 label: "Background Image",
                 type: "image",
+              },
+            ],
+          },
+          {
+            name: "adSection",
+            label: "Advertisement Section",
+            type: "object",
+            fields: [
+              {
+                name: "enabled",
+                label: "Enable Section",
+                type: "boolean",
+                description: "Toggle to show/hide the advertisement section",
+              },
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "autoplay",
+                label: "Enable Autoplay",
+                type: "boolean",
+                description: "Automatically advance slides",
+              },
+              {
+                name: "autoplayDuration",
+                label: "Autoplay Duration (ms)",
+                type: "number",
+                description:
+                  "Time between slides in milliseconds (e.g. 5000 for 5 seconds)",
+              },
+              {
+                name: "images",
+                label: "Advertisement Images",
+                type: "image",
+                list: true,
+                description: "Upload advertisement images",
               },
             ],
           },
