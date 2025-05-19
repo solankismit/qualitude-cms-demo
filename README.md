@@ -1,2 +1,1 @@
-﻿# Qualitude Solar & Technologies 
- 
+
