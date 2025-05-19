@@ -86,7 +86,7 @@ export function AdSection({
             bulletClass: "custom-bullet",
             bulletActiveClass: "custom-bullet-active",
           }}
-          effect="fade"
+          effect="slide"
           loop={true}
           autoplay={
             autoplay
@@ -110,7 +110,7 @@ export function AdSection({
         >
           {validImages.map((image, index) => (
             <SwiperSlide key={index}>
-              <div className="relative aspect-[16/9]">
+              <div className="relative aspect-square lg:aspect-[16/9]">
                 <Image
                   src={image}
                   alt={`Advertisement ${index + 1}`}

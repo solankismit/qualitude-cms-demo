@@ -10,11 +10,12 @@
   height: 8px !important;
   display: inline-block !important;
   border-radius: 50% !important;
-  background: rgba(0, 0, 0, 0.2) !important;
-  margin: 0 4px !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  margin: 0 5px !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
-  opacity: 0.6 !important;
+  opacity: 0.8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 .custom-bullet-active {
@@ -22,25 +23,34 @@
   background: #3b82f6 !important; /* Blue color */
   width: 10px !important;
   height: 10px !important;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
 }
 
 /* Dark mode pagination */
 @media (prefers-color-scheme: dark) {
   .custom-bullet {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
   }
   
   .custom-bullet-active {
     background: #60a5fa !important; /* Lighter blue for dark mode */
-    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
   }
 }
 
-/* Move pagination down slightly */
+/* Move pagination down slightly and add subtle background */
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 15px !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  padding: 5px 10px !important;
+  border-radius: 20px !important;
+  width: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
 /* Custom navigation button effects */
