@@ -7,6 +7,7 @@ import { FeaturesSection } from "@/components/solar/sections/features-section";
 import { ProcessSection } from "@/components/solar/sections/process-section";
 import { Gallery } from "@/components/solar/gallery";
 import { ContactForm } from "@/components/solar/contact-form";
+import { AdSection } from "@/components/ad-section";
 import { useTina } from "tinacms/dist/react";
 import { SolarPageQuery } from "@/tina/__generated__/types";
 
@@ -32,8 +33,22 @@ export default function SolarPage({
       <HeroSection solarPage={data.solarPage} />
       <BenefitsSection solarPage={data.solarPage} />
       <ServicesSection solarPage={data.solarPage} />
+      {/* Ad Section */}
+      {(data.solarPage as any).adSection &&
+        (data.solarPage as any).adSection.enabled && (
+          <AdSection
+            className="dark:bg-gray-800"
+            title={(data.solarPage as any).adSection.title || ""}
+            images={(data.solarPage as any).adSection.images || []}
+            autoplay={(data.solarPage as any).adSection.autoplay !== false}
+            autoplayDuration={
+              (data.solarPage as any).adSection.autoplayDuration || 5000
+            }
+          />
+        )}
       <FeaturesSection solarPage={data.solarPage} />
       <ProcessSection solarPage={data.solarPage} />
+
       <div id="gallery">
         <Gallery solarPage={data.solarPage} />
       </div>

@@ -5,6 +5,14 @@
     "description": "Specializing in custom solar panel installations, energy storage systems, and comprehensive maintenance services, we provide innovative solutions that reduce your energy costs while protecting the environment.",
     "image": "https://res.cloudinary.com/dhytpacv8/video/upload/v1743884896/Solar_Panels_Energy_Video_ofduxo.mp4"
   },
+  "adSection": {
+    "enabled": true,
+    "title": " ",
+    "autoplay": false,
+    "images": [
+      "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180094/samples/ecommerce/car-interior-design.jpg"
+    ]
+  },
   "benefits": [
     {
       "title": "Save on Electricity Bills",

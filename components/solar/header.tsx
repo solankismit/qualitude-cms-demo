@@ -95,7 +95,15 @@ export function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-          <Image src="/favicon.png" alt="Qualitude Solar" width={30} height={30} />
+            <div className="bg-black/20 dark:bg-black/40 rounded-md p-1 backdrop-blur-sm">
+              <Image
+                src="/favicon.png"
+                alt="Qualitude Solar"
+                width={30}
+                height={30}
+                className="drop-shadow-[0px_0px_0.7px_rgba(255,255,255,1)]"
+              />
+            </div>
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
               Qualitude Solar
             </span>
@@ -117,7 +125,10 @@ export function Header() {
 
           {/* Contact Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href={`tel:${contact.phone}`} className="flex items-center space-x-2 text-sm">
+            <Link
+              href={`tel:${contact.phone}`}
+              className="flex items-center space-x-2 text-sm"
+            >
               <Phone className="w-4 h-4 text-blue-500" />
               <span className="font-medium">{contact.phone}</span>
             </Link>

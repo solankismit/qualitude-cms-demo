@@ -17,12 +17,17 @@ export function Navbar() {
   if (!mounted) return null;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-black backdrop-blur supports-[backdrop-filter]:bg-black/60">
+    <nav className="sticky top-0 z-50 w-full border-b bg-black backdrop-blur supports-[backdrop-filter]:bg-black/30">
       <div className="px-5 md:px-20 flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
-            {/* <Cpu className="h-6 w-6" /> */}
-            <Image src="/favicon.png" alt="Qualitude Logo" width={30} height={30} />
+            <Image
+              src="/favicon.png"
+              alt="Qualitude Logo"
+              width={30}
+              height={30}
+              className="drop-shadow-[0px_0px_0.7px_rgba(255,255,255,1)]"
+            />
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
               Qualitude IT Solution
             </span>
