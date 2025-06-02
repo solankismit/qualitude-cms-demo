@@ -97,7 +97,7 @@ export function ProjectContent({
         </Section>
       )}
 
-      {testimonial && (
+      {/* {testimonial && (
         <Section className="bg-gray-50 dark:bg-gray-900 last:!mb-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +140,7 @@ export function ProjectContent({
             </blockquote>
           </motion.div>
         </Section>
-      )}
+      )} */}
     </div>
   );
 }
