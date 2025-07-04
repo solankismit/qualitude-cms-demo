@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sun, Moon, Menu, X, Zap, Cpu } from "lucide-react";
 import Image from "next/image";
@@ -11,10 +12,92 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isTechnologiesSection = pathname.startsWith("/technologies");
 
   useEffect(() => setMounted(true), []);
 
+  // Handle hash navigation when coming from another page
+  useEffect(() => {
+    if (pathname === "/technologies") {
+      const hash = window.location.hash;
+      if (hash) {
+        // Wait for page to load and then scroll
+        setTimeout(() => {
+          const targetId = hash.slice(1); // Remove the # from the hash
+          const element = document.getElementById(targetId);
+          if (element) {
+            const offset = 64; // Height of the fixed header
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }, 100);
+      }
+    }
+  }, [pathname]);
+
   if (!mounted) return null;
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    // Only handle smooth scrolling for the main technologies page
+    if (pathname !== "/technologies") {
+      // For other pages, let normal navigation handle it
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        // Navigate to main technologies page with hash
+        router.push(`/technologies${href}`);
+        return;
+      }
+      return;
+    }
+
+    e.preventDefault();
+    setIsOpen(false); // Close mobile menu
+
+    setTimeout(() => {
+      if (href === "/technologies") {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+        return;
+      }
+
+      const targetId = href.split("#")[1];
+      if (!targetId) return;
+
+      const element = document.getElementById(targetId);
+      if (element) {
+        const offset = 64; // Height of the fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
+
+  const navItems = isTechnologiesSection
+    ? [
+        { label: "Home", href: "/technologies" },
+        { label: "Services", href: "#services" },
+        { label: "Courses", href: "#courses" },
+        { label: "Projects", href: "#projects" },
+      ]
+    : [];
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-black backdrop-blur supports-[backdrop-filter]:bg-black/30">
@@ -32,52 +115,64 @@ export function Navbar() {
               Qualitude IT Solution
             </span>
           </Link>
-          <div className="hidden md:flex md:gap-6">
-            {/* <Link href="/technologies" className="text-foreground/60 transition-colors hover:text-foreground">
-              Technologies
-            </Link>
-            <Link href="/solar" className="text-foreground/60 transition-colors hover:text-foreground">
-              Solar
-            </Link> */}
-            {/* <Link href="/contact" className="text-foreground/60 transition-colors hover:text-foreground">
-              Contact
-            </Link> */}
-          </div>
+
+          {/* Desktop Navigation - show on all technology pages */}
+          {isTechnologiesSection && (
+            <div className="hidden md:flex md:gap-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-sm font-medium text-white/70 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-        <div className=" items-center gap-4 hidden md:flex">
+
+        <div className="flex items-center gap-4">
           <Link href="/technologies/contact">
             <Button>Contact Us</Button>
           </Link>
-          {/* <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button> */}
+
+          {/* Mobile Menu Button - show on all technology pages */}
+          {isTechnologiesSection && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden text-white"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
+          )}
         </div>
       </div>
-      {isOpen && (
-        <div className="container md:hidden">
+
+      {/* Mobile Menu - show on all technology pages */}
+      {isTechnologiesSection && isOpen && (
+        <div className="md:hidden border-t border-white/10">
           <div className="flex flex-col space-y-4 p-4">
-            {/* <Link
-              href="/technologies"
-              className="text-foreground/60 transition-colors hover:text-foreground"
-              onClick={() => setIsOpen(false)}
-            >
-              Technologies
-            </Link>
-            <Link
-              href="/solar"
-              className="text-foreground/60 transition-colors hover:text-foreground"
-              onClick={() => setIsOpen(false)}
-            >
-              Solar
-            </Link> */}
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-sm font-medium text-white/70 hover:text-blue-400 transition-colors cursor-pointer"
+              >
+                {item.label}
+              </a>
+            ))}
             <Link
               href="/technologies/contact"
-              className="text-foreground/60 transition-colors hover:text-foreground hidden md:block"
+              className="text-sm font-medium text-white/70 hover:text-blue-400 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Contact

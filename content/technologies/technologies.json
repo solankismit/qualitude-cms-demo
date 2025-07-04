@@ -8,5 +8,19 @@
       "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-2.jpg",
       "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180092/samples/ecommerce/analog-classic.jpg"
     ]
+  },
+  "popupAd": {
+    "enabled": true,
+    "title": "",
+    "images": [
+      {
+        "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1744452241/pf8ley0uxglgmlqp6uy0.png",
+        "link": "ss"
+      },
+      {
+        "image": "https://res.cloudinary.com/dhytpacv8/image/upload/v1741180102/cld-sample-5.jpg",
+        "link": "https://google.com"
+      }
+    ]
   }
 }

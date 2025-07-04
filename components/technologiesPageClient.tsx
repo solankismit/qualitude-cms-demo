@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Brain,
@@ -9,6 +10,12 @@ import {
   Target,
   Users,
   Zap,
+  Shield,
+  Award,
+  Globe,
+  Lightbulb,
+  Rocket,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -17,6 +24,7 @@ import Link from "next/link";
 import { AdSection } from "./ad-section";
 import { ProjectsHomeSection } from "./projects/projects-home-section";
 import { useTina } from "tinacms/dist/react";
+import { PopupAd } from "@/components/popup-ad";
 
 const features = [
   {
@@ -59,7 +67,26 @@ export function TechnologiesPageClient({
     data,
   });
 
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const adSection = tinaData.technologiesPage.adSection;
+  const popupAd = tinaData.technologiesPage.popupAd;
+  console.log("popupAd", popupAd);
+  // Show popup on page load if enabled
+  useEffect(() => {
+    if (
+      popupAd &&
+      popupAd.enabled &&
+      popupAd.images &&
+      popupAd.images.length > 0
+    ) {
+      const timer = setTimeout(() => {
+        setIsPopupOpen(true);
+      }, 2000); // Show popup after 2 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [popupAd]);
 
   return (
     <div>
@@ -109,7 +136,7 @@ export function TechnologiesPageClient({
         </div>
 
         {/* Features Section */}
-        <div className="bg-white dark:bg-gray-950">
+        <div id="features" className="bg-white dark:bg-gray-950">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {features.map((feature, index) => (
@@ -135,7 +162,7 @@ export function TechnologiesPageClient({
         </div>
 
         {/* Services Section */}
-        <div className="bg-gray-50 dark:bg-gray-900">
+        <div id="services" className="bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -177,7 +204,7 @@ export function TechnologiesPageClient({
         </div>
 
         {/* Courses Section */}
-        <div className="bg-white dark:bg-gray-950">
+        <div id="courses" className="bg-white dark:bg-gray-950">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -271,8 +298,24 @@ export function TechnologiesPageClient({
             autoplayDuration={adSection.autoplayDuration || 5000}
           />
         )}
+
         {/* Featured Projects Section */}
-        <ProjectsHomeSection />
+        <div id="projects">
+          <ProjectsHomeSection />
+        </div>
+
+        {/* Popup Ad */}
+        {popupAd && popupAd.enabled && (
+          <PopupAd
+            isOpen={isPopupOpen}
+            onClose={() => setIsPopupOpen(false)}
+            title={popupAd.title || ""}
+            images={popupAd.images || []}
+            autoplay={popupAd.autoplay === true}
+            autoplayDuration={popupAd.autoplayDuration || 5000}
+          />
+        )}
+
         {/* Inquiry Form */}
         {/* <div className="bg-gray-50 dark:bg-gray-900">
         <div className="">

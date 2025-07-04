@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { HeroSection } from "@/components/solar/sections/hero-section";
 import { BenefitsSection } from "@/components/solar/sections/benefits-section";
 import { ServicesSection } from "@/components/solar/sections/services-section";
@@ -8,6 +9,7 @@ import { ProcessSection } from "@/components/solar/sections/process-section";
 import { Gallery } from "@/components/solar/gallery";
 import { ContactForm } from "@/components/solar/contact-form";
 import { AdSection } from "@/components/ad-section";
+import { PopupAd } from "@/components/popup-ad";
 import { useTina } from "tinacms/dist/react";
 import { SolarPageQuery } from "@/tina/__generated__/types";
 
@@ -27,6 +29,26 @@ export default function SolarPage({
     query,
     variables,
   });
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const popupAd = (data.solarPage as any).popupAd;
+
+  // Show popup on page load if enabled
+  useEffect(() => {
+    if (
+      popupAd &&
+      popupAd.enabled &&
+      popupAd.images &&
+      popupAd.images.length > 0
+    ) {
+      const timer = setTimeout(() => {
+        setIsPopupOpen(true);
+      }, 2000); // Show popup after 2 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [popupAd]);
 
   return (
     <div className="relative">
@@ -55,6 +77,18 @@ export default function SolarPage({
       <div id="contact">
         <ContactForm solarPage={data.solarPage} />
       </div>
+      {console.log("popupAd", popupAd)}
+      {/* Popup Ad */}
+      {popupAd && popupAd.enabled && (
+        <PopupAd
+          isOpen={isPopupOpen}
+          onClose={() => setIsPopupOpen(false)}
+          title={popupAd.title || ""}
+          images={popupAd.images || []}
+          autoplay={popupAd.autoplay === true}
+          autoplayDuration={popupAd.autoplayDuration || 5000}
+        />
+      )}
     </div>
   );
 }

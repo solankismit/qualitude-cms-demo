@@ -404,6 +404,58 @@ export default defineConfig({
               },
             ],
           },
+          {
+            name: "popupAd",
+            label: "Popup Advertisement",
+            type: "object",
+            fields: [
+              {
+                name: "enabled",
+                label: "Enable Popup",
+                type: "boolean",
+                description: "Toggle to show/hide the popup advertisement",
+              },
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "autoplay",
+                label: "Enable Autoplay",
+                type: "boolean",
+                description: "Automatically advance slides",
+              },
+              {
+                name: "autoplayDuration",
+                label: "Autoplay Duration (ms)",
+                type: "number",
+                description:
+                  "Time between slides in milliseconds (e.g. 5000 for 5 seconds)",
+              },
+              {
+                name: "images",
+                label: "Advertisement Images",
+                type: "object",
+                list: true,
+                description: "Upload advertisement images for popup",
+                fields: [
+                  {
+                    name: "image",
+                    label: "Image",
+                    type: "image",
+                  },
+                  {
+                    name: "link",
+                    label: "Link URL",
+                    type: "string",
+                    description:
+                      "Optional link for the image (leave empty for non-clickable image)",
+                  },
+                ],
+              },
+            ],
+          },
         ],
       },
       {
@@ -482,6 +534,58 @@ export default defineConfig({
                 type: "image",
                 list: true,
                 description: "Upload advertisement images",
+              },
+            ],
+          },
+          {
+            name: "popupAd",
+            label: "Popup Advertisement",
+            type: "object",
+            fields: [
+              {
+                name: "enabled",
+                label: "Enable Popup",
+                type: "boolean",
+                description: "Toggle to show/hide the popup advertisement",
+              },
+              {
+                name: "title",
+                label: "Title",
+                type: "string",
+              },
+              {
+                name: "autoplay",
+                label: "Enable Autoplay",
+                type: "boolean",
+                description: "Automatically advance slides",
+              },
+              {
+                name: "autoplayDuration",
+                label: "Autoplay Duration (ms)",
+                type: "number",
+                description:
+                  "Time between slides in milliseconds (e.g. 5000 for 5 seconds)",
+              },
+              {
+                name: "images",
+                label: "Advertisement Images",
+                type: "object",
+                list: true,
+                description: "Upload advertisement images for popup",
+                fields: [
+                  {
+                    name: "image",
+                    label: "Image",
+                    type: "image",
+                  },
+                  {
+                    name: "link",
+                    label: "Link URL",
+                    type: "string",
+                    description:
+                      "Optional link for the image (leave empty for non-clickable image)",
+                  },
+                ],
               },
             ],
           },
