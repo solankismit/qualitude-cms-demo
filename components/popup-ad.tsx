@@ -125,15 +125,17 @@ export function PopupAd({
           }
         }}
       >
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-4 top-4 z-50 rounded-full w-8 h-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-900 transition-all duration-200 shadow-lg"
-          onClick={onClose}
-        >
-          <X className="h-4 w-4 text-gray-700 dark:text-gray-300" />
-          <span className="sr-only">Close</span>
-        </Button>
+        {!title && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-4 top-4 z-50 rounded-full w-8 h-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-900 transition-all duration-200 shadow-lg"
+            onClick={onClose}
+          >
+            <X className="h-4 w-4 text-gray-700 dark:text-gray-300" />
+            <span className="sr-only">Close</span>
+          </Button>
+        )}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
