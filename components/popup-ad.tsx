@@ -105,7 +105,7 @@ export function PopupAd({
       // Prevent focus trap behavior in TinaCMS
       modal={!isTinaCMS}
     >
-      <DialogTitle> Popup Ad</DialogTitle>
+      <DialogTitle className="hidden">Popup Ad</DialogTitle>
       <DialogContent
         className="max-w-4xl p-0 gap-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm"
         // Prevent auto-focus behavior in TinaCMS
