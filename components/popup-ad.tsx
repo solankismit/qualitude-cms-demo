@@ -202,7 +202,7 @@ export function PopupAd({
                             src={item.image}
                             alt={`${title} - Slide ${index + 1}`}
                             fill
-                            className="object-cover transition-transform duration-300 hover:scale-105"
+                            className="object-contain transition-transform duration-300 hover:scale-105"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                             priority={index === 0}
                           />
@@ -212,7 +212,7 @@ export function PopupAd({
                           src={item.image}
                           alt={`${title} - Slide ${index + 1}`}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                           priority={index === 0}
                         />
